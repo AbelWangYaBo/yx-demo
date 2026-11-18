@@ -1,0 +1,2422 @@
+{
+ "items": [
+  {
+   "id": 110,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "program",
+   "entity_id": "5",
+   "payload": {
+    "departure_date": "2027-04-15",
+    "emergency_plan": false,
+    "filing_date": "2027-03-10",
+    "filing_status": "已备案",
+    "insurance": null,
+    "name": "春季曲阜文化研学营（虚构）",
+    "return_date": "2027-04-17",
+    "status": "筹备中",
+    "student_age_group": "中学",
+    "student_count": 20,
+    "teacher_count": 1,
+    "type": "境内研学"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.428007+08:00",
+   "prev_hash": "f18a984aa1bd7ba82cf50c38c13d65b46bf8adafaba964e9126b5716b993af2a",
+   "hash": "16f90862390ad9505c79c98f64616afe85040f79d7197958ddec79f552ccf8b8"
+  },
+  {
+   "id": 109,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "quotation",
+   "entity_id": "5",
+   "payload": {
+    "course_id": 7,
+    "items": [
+     {
+      "amount": "920",
+      "currency": "USD",
+      "name": "学费+食宿（USD 230/周 × 4周 · 2人间）"
+     },
+     {
+      "amount": "100",
+      "currency": "USD",
+      "name": "学校注册费（一次性，不退）"
+     },
+     {
+      "amount": "≈19,400 PHP",
+      "currency": "PHP",
+      "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）"
+     },
+     {
+      "amount": "230",
+      "currency": "USD",
+      "internal": true,
+      "name": "学校返佣预估（25%，内部）"
+     }
+    ],
+    "quote_no": "QT-2026-005",
+    "room_type": "2人间",
+    "school_id": 5,
+    "start_date": "2027-01-10",
+    "status": "草稿",
+    "student_id": 5,
+    "total_usd": "1020",
+    "weeks": 4
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.426925+08:00",
+   "prev_hash": "670acb2243297bc02886aaa4e331f9e251b11ec10fc0b5782f6491b6429a81d9",
+   "hash": "f18a984aa1bd7ba82cf50c38c13d65b46bf8adafaba964e9126b5716b993af2a"
+  },
+  {
+   "id": 108,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "quotation",
+   "entity_id": "4",
+   "payload": {
+    "course_id": 3,
+    "items": [
+     {
+      "amount": "960",
+      "currency": "USD",
+      "name": "学费+食宿（USD 240/周 × 4周 · 2人间）"
+     },
+     {
+      "amount": "100",
+      "currency": "USD",
+      "name": "学校注册费（一次性，不退）"
+     },
+     {
+      "amount": "≈19,400 PHP",
+      "currency": "PHP",
+      "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）"
+     },
+     {
+      "amount": "192",
+      "currency": "USD",
+      "internal": true,
+      "name": "学校返佣预估（20%，内部）"
+     }
+    ],
+    "quote_no": "QT-2026-004",
+    "room_type": "2人间",
+    "school_id": 2,
+    "start_date": "2027-01-10",
+    "status": "已发送",
+    "student_id": 5,
+    "total_usd": "1060",
+    "weeks": 4
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.422404+08:00",
+   "prev_hash": "84618aa8c4527b42b98309c544b82219e97b0401647e580605ec747edf3810f9",
+   "hash": "670acb2243297bc02886aaa4e331f9e251b11ec10fc0b5782f6491b6429a81d9"
+  },
+  {
+   "id": 107,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-105",
+   "payload": {
+    "after": "沟通中",
+    "before": "意向",
+    "remark": "比价中（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.420545+08:00",
+   "prev_hash": "ae6f01dc1b1b1b96551053bfeaa69d706fbeccea8a817d7255ca182dbaf1b85c",
+   "hash": "84618aa8c4527b42b98309c544b82219e97b0401647e580605ec747edf3810f9"
+  },
+  {
+   "id": 106,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "10",
+   "payload": {
+    "channel": "电话",
+    "direction": "呼出",
+    "occurred_at": "2026-11-15 10:00:00",
+    "operator": "顾问丙（虚构）",
+    "student_id": 5,
+    "student_no": "STU-2027-105",
+    "summary": "免费CEFR测试B1；宿务性价比 vs 碧瑶低价（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.419513+08:00",
+   "prev_hash": "f3dc5eea0985364925690d5ac7327d534b1220e80450145a68d217d9ca0400ac",
+   "hash": "ae6f01dc1b1b1b96551053bfeaa69d706fbeccea8a817d7255ca182dbaf1b85c"
+  },
+  {
+   "id": 105,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "9",
+   "payload": {
+    "channel": "微信",
+    "direction": "呼入",
+    "occurred_at": "2026-11-14 21:00:00",
+    "operator": "顾问丙（虚构）",
+    "student_id": 5,
+    "student_no": "STU-2027-105",
+    "summary": "寒假4周，口语冲刺，预算有限（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.418020+08:00",
+   "prev_hash": "b18b7d8fa466b7d78db6d84ad43f657fdc70dc0d8ca47d7a2848fd1c021b2a96",
+   "hash": "f3dc5eea0985364925690d5ac7327d534b1220e80450145a68d217d9ca0400ac"
+  },
+  {
+   "id": 104,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-104",
+   "payload": {
+    "after": "已流失",
+    "before": "已报名",
+    "remark": "取消游学（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.417054+08:00",
+   "prev_hash": "53dfd3753be737ce9ed76844f7cd0cc697fa7015718a7c827c6e5a4d9397d5ae",
+   "hash": "b18b7d8fa466b7d78db6d84ad43f657fdc70dc0d8ca47d7a2848fd1c021b2a96"
+  },
+  {
+   "id": 103,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "enrollment",
+   "entity_id": "4",
+   "payload": {
+    "after": "已终止",
+    "before": "已缴费",
+    "remark": "开课前2周取消，进入退费流程（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.415344+08:00",
+   "prev_hash": "d7312ccf26aa0e620a3f345c8a76b85e318b4199a555777f841c790efa4fa405",
+   "hash": "53dfd3753be737ce9ed76844f7cd0cc697fa7015718a7c827c6e5a4d9397d5ae"
+  },
+  {
+   "id": 102,
+   "actor": "种子脚本",
+   "action": "update",
+   "entity": "contract",
+   "entity_id": "CT-2026-104",
+   "payload": {
+    "after": {
+     "status": "已解除"
+    },
+    "before": {
+     "status": "履行中"
+    },
+    "reason": "学员开课前取消（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.414348+08:00",
+   "prev_hash": "150822e4f84a99471bb6402b427dfc829bb12e16b06effed866f6e3fbd9cfda7",
+   "hash": "d7312ccf26aa0e620a3f345c8a76b85e318b4199a555777f841c790efa4fa405"
+  },
+  {
+   "id": 101,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "service_event",
+   "entity_id": "24",
+   "payload": {
+    "contract_id": 4,
+    "event_type": "取消申请",
+    "occurred_at": "2026-11-01 16:35:00",
+    "operator": "顾问乙（虚构）",
+    "remark": "开课前14天取消，按梯度退70%（注册费不退）；退款协议待签（虚构）",
+    "student_id": 4,
+    "student_no": "STU-2027-104"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.412637+08:00",
+   "prev_hash": "5fac49ea363e2a92a7dfb79fe06632460cfd51092387ad1aaae2bfa07fa39841",
+   "hash": "150822e4f84a99471bb6402b427dfc829bb12e16b06effed866f6e3fbd9cfda7"
+  },
+  {
+   "id": 100,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "8",
+   "payload": {
+    "channel": "电话",
+    "direction": "呼入",
+    "occurred_at": "2026-11-01 16:30:00",
+    "operator": "顾问乙（虚构）",
+    "student_id": 4,
+    "student_no": "STU-2027-104",
+    "summary": "公司项目突发，申请取消（开课前2周）（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.411724+08:00",
+   "prev_hash": "d8b776bd73d0197172cb28f1b7d6cea2b4438bc12763319265f7106b0211e77f",
+   "hash": "5fac49ea363e2a92a7dfb79fe06632460cfd51092387ad1aaae2bfa07fa39841"
+  },
+  {
+   "id": 99,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "enrollment",
+   "entity_id": "4",
+   "payload": {
+    "after": "已缴费",
+    "before": "材料准备",
+    "remark": "定金已缴，尾款待缴（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.410867+08:00",
+   "prev_hash": "1bc834474f8429d0b54384ea0e70e0e2168aeb9c99a9e8083a22af0aa5a50674",
+   "hash": "d8b776bd73d0197172cb28f1b7d6cea2b4438bc12763319265f7106b0211e77f"
+  },
+  {
+   "id": 98,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "payment",
+   "entity_id": "7",
+   "payload": {
+    "amount": "2000",
+    "contract_id": 4,
+    "currency": "CNY",
+    "payee": "示例远航国际游学（虚构）",
+    "type": "定金",
+    "voucher_no": "INV-104-D"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.409162+08:00",
+   "prev_hash": "929242679311a9e5b1eb2a2d679d91f33ad2b7238ab2af48bf3104ab38f0b038",
+   "hash": "1bc834474f8429d0b54384ea0e70e0e2168aeb9c99a9e8083a22af0aa5a50674"
+  },
+  {
+   "id": 97,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "contract",
+   "entity_id": "4",
+   "payload": {
+    "contract_no": "CT-2026-104",
+    "currency": "USD",
+    "refund_rules": [
+     {
+      "ratio": "95",
+      "stage": "开课前4周以上取消"
+     },
+     {
+      "ratio": "70",
+      "stage": "开课前2-4周取消"
+     },
+     {
+      "ratio": "50",
+      "stage": "开课前1-2周取消"
+     },
+     {
+      "ratio": "20",
+      "stage": "开课前1周内取消"
+     },
+     {
+      "ratio": "40",
+      "stage": "在读期间（重病等特例）"
+     },
+     {
+      "ratio": "0",
+      "stage": "开除/自行退学"
+     }
+    ],
+    "service_scope": [
+     "选校咨询",
+     "代办报名",
+     "签证指导"
+    ],
+    "signed_date": "2026-10-10",
+    "status": "履行中",
+    "student_id": 4,
+    "student_no": "STU-2027-104",
+    "total_fee": "820"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.407476+08:00",
+   "prev_hash": "368aed599c33eb2ca50d31e66eacda0a952f1b9886bd4e72185d612a13b3e916",
+   "hash": "929242679311a9e5b1eb2a2d679d91f33ad2b7238ab2af48bf3104ab38f0b038"
+  },
+  {
+   "id": 96,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "enrollment",
+   "entity_id": "4",
+   "payload": {
+    "after": "材料准备",
+    "before": "已报名",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.406478+08:00",
+   "prev_hash": "0ebe9a9722848bd68b413f91e91fe9d77695c5e93693c12f39b48ed054bf3b94",
+   "hash": "368aed599c33eb2ca50d31e66eacda0a952f1b9886bd4e72185d612a13b3e916"
+  },
+  {
+   "id": 95,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-104",
+   "payload": {
+    "after": "已报名",
+    "before": "沟通中",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.405367+08:00",
+   "prev_hash": "c3754fc6f35bf8aa254d28bc29a4ae9fe353986c8355f640adff89aaa2764e08",
+   "hash": "0ebe9a9722848bd68b413f91e91fe9d77695c5e93693c12f39b48ed054bf3b94"
+  },
+  {
+   "id": 94,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-104",
+   "payload": {
+    "after": "沟通中",
+    "before": "意向",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.404220+08:00",
+   "prev_hash": "77e82e7430926eac252bb912d8c2834b90835011f2fa5b583e3104a3e4c9cd41",
+   "hash": "c3754fc6f35bf8aa254d28bc29a4ae9fe353986c8355f640adff89aaa2764e08"
+  },
+  {
+   "id": 93,
+   "actor": "种子脚本",
+   "action": "confirm",
+   "entity": "quotation",
+   "entity_id": "QT-2026-003",
+   "payload": {
+    "enrollment_program": "SMEAG·ESL 一般英文（4周·4人间）",
+    "status": "已确认"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.403026+08:00",
+   "prev_hash": "1b2422ee0aadc2628d9b89cf6d6bac11bcc42d4f44272ca516a4adcb3af0a32d",
+   "hash": "77e82e7430926eac252bb912d8c2834b90835011f2fa5b583e3104a3e4c9cd41"
+  },
+  {
+   "id": 92,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "enrollment",
+   "entity_id": "4",
+   "payload": {
+    "accommodation": "4人间",
+    "course_name": "ESL 一般英文",
+    "expected_start": "2026-11-15",
+    "pickup_arranged": true,
+    "program_id": 4,
+    "quotation_id": 3,
+    "student_id": 4
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.402076+08:00",
+   "prev_hash": "0526c4bf00f7d7f9a264262c639200408aa63edb80560003f51c8e7b2a43bab1",
+   "hash": "1b2422ee0aadc2628d9b89cf6d6bac11bcc42d4f44272ca516a4adcb3af0a32d"
+  },
+  {
+   "id": 91,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "program",
+   "entity_id": "4",
+   "payload": {
+    "course_id": 3,
+    "departure_date": "2026-11-15",
+    "name": "SMEAG·ESL 一般英文（4周·4人间）",
+    "return_date": "2026-12-12",
+    "room_type": "4人间",
+    "school_id": 2,
+    "status": "进行中",
+    "type": "语言研修",
+    "weeks": 4
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.400301+08:00",
+   "prev_hash": "a07e16b75d2404747773565da581455d0832568862a8a71454e19948ca309625",
+   "hash": "0526c4bf00f7d7f9a264262c639200408aa63edb80560003f51c8e7b2a43bab1"
+  },
+  {
+   "id": 90,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "quotation",
+   "entity_id": "3",
+   "payload": {
+    "course_id": 3,
+    "items": [
+     {
+      "amount": "720",
+      "currency": "USD",
+      "name": "学费+食宿（USD 180/周 × 4周 · 4人间）"
+     },
+     {
+      "amount": "100",
+      "currency": "USD",
+      "name": "学校注册费（一次性，不退）"
+     },
+     {
+      "amount": "≈19,400 PHP",
+      "currency": "PHP",
+      "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）"
+     },
+     {
+      "amount": "144",
+      "currency": "USD",
+      "internal": true,
+      "name": "学校返佣预估（20%，内部）"
+     }
+    ],
+    "quote_no": "QT-2026-003",
+    "room_type": "4人间",
+    "school_id": 2,
+    "start_date": "2026-11-15",
+    "status": "已发送",
+    "student_id": 4,
+    "total_usd": "820",
+    "weeks": 4
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.397896+08:00",
+   "prev_hash": "f2fea8a0f1d0d016dfa90c234a751871e7982bb530248d7ffd868baf5efa093b",
+   "hash": "a07e16b75d2404747773565da581455d0832568862a8a71454e19948ca309625"
+  },
+  {
+   "id": 89,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "14",
+   "payload": {
+    "doc_no": "E88001104（虚构）",
+    "doc_type": "护照",
+    "expiry_date": "2031-08-01",
+    "student_id": 4,
+    "student_no": "STU-2027-104"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.396129+08:00",
+   "prev_hash": "72bfb998ab97ad7ff4ca87fa43968450fcc721f7c58747b1d81282d7f18b782c",
+   "hash": "f2fea8a0f1d0d016dfa90c234a751871e7982bb530248d7ffd868baf5efa093b"
+  },
+  {
+   "id": 88,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "7",
+   "payload": {
+    "channel": "微信",
+    "direction": "呼入",
+    "occurred_at": "2026-09-28 12:00:00",
+    "operator": "顾问乙（虚构）",
+    "student_id": 4,
+    "student_no": "STU-2027-104",
+    "summary": "年假4周想强化口语，预算1.5万（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.394253+08:00",
+   "prev_hash": "5306a44918b21c774ddfdb49c6532a565f62f7693bc277b0037e2b934e86fd3f",
+   "hash": "72bfb998ab97ad7ff4ca87fa43968450fcc721f7c58747b1d81282d7f18b782c"
+  },
+  {
+   "id": 87,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "payment",
+   "entity_id": "6",
+   "payload": {
+    "amount": "5000",
+    "contract_id": 3,
+    "currency": "CNY",
+    "payee": "示例远航国际游学（虚构）",
+    "type": "定金",
+    "voucher_no": "INV-103-D"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.393305+08:00",
+   "prev_hash": "28dfe134d3545e69784b7cf8dcf2485cc3002c99ff18c7350a161db85a394f44",
+   "hash": "5306a44918b21c774ddfdb49c6532a565f62f7693bc277b0037e2b934e86fd3f"
+  },
+  {
+   "id": 86,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "contract",
+   "entity_id": "3",
+   "payload": {
+    "contract_no": "CT-2026-103",
+    "currency": "CNY",
+    "refund_rules": [
+     {
+      "ratio": "95",
+      "stage": "开课前4周以上取消"
+     },
+     {
+      "ratio": "70",
+      "stage": "开课前2-4周取消"
+     },
+     {
+      "ratio": "50",
+      "stage": "开课前1-2周取消"
+     },
+     {
+      "ratio": "20",
+      "stage": "开课前1周内取消"
+     },
+     {
+      "ratio": "40",
+      "stage": "在读期间（重病等特例）"
+     },
+     {
+      "ratio": "0",
+      "stage": "开除/自行退学"
+     }
+    ],
+    "service_scope": [
+     "营地报名",
+     "签证指导",
+     "行前服务",
+     "领队随营"
+    ],
+    "signed_date": "2026-11-12",
+    "status": "履行中",
+    "student_id": 3,
+    "student_no": "STU-2027-103",
+    "total_fee": "26800"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.392057+08:00",
+   "prev_hash": "f574f9896f779d5b1f0497850bad13a61d41de42b0525146893c825a10481107",
+   "hash": "28dfe134d3545e69784b7cf8dcf2485cc3002c99ff18c7350a161db85a394f44"
+  },
+  {
+   "id": 85,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-103",
+   "payload": {
+    "after": "已报名",
+    "before": "沟通中",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.390981+08:00",
+   "prev_hash": "30b275d3ad25f46c2e0ef416e6d3bc5c564e4e1b039d5ee49e364543ba769728",
+   "hash": "f574f9896f779d5b1f0497850bad13a61d41de42b0525146893c825a10481107"
+  },
+  {
+   "id": 84,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-103",
+   "payload": {
+    "after": "沟通中",
+    "before": "意向",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.371477+08:00",
+   "prev_hash": "97e5f5be74c5e35b9445743d996d046f1e2e4c603754eba8910da23c559db508",
+   "hash": "30b275d3ad25f46c2e0ef416e6d3bc5c564e4e1b039d5ee49e364543ba769728"
+  },
+  {
+   "id": 83,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "enrollment",
+   "entity_id": "3",
+   "payload": {
+    "accommodation": "4人间（营地宿舍）",
+    "course_name": "Junior Camp 寒假营",
+    "expected_start": "2027-01-17",
+    "health_proof": true,
+    "parent_notice_signed": true,
+    "pickup_arranged": true,
+    "program_id": 3,
+    "student_id": 3
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.370403+08:00",
+   "prev_hash": "59ce7aa43a298ac99e9ab8a2713fbddc8ef110db32d3a81a93389f1c36b9b3d1",
+   "hash": "97e5f5be74c5e35b9445743d996d046f1e2e4c603754eba8910da23c559db508"
+  },
+  {
+   "id": 82,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "13",
+   "payload": {
+    "doc_no": "INS-CAMP-2027-103（虚构）",
+    "doc_type": "保险单",
+    "expiry_date": "2027-02-07",
+    "issued_date": "2026-12-20",
+    "student_id": 3,
+    "student_no": "STU-2027-103"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.368776+08:00",
+   "prev_hash": "f5b001307c77674bd855313713b9a74b8414cfc30573308329fff318c7252b82",
+   "hash": "59ce7aa43a298ac99e9ab8a2713fbddc8ef110db32d3a81a93389f1c36b9b3d1"
+  },
+  {
+   "id": 81,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "12",
+   "payload": {
+    "doc_no": "WEG-2027-103（虚构）",
+    "doc_type": "WEG",
+    "issued_date": "2026-11-25",
+    "remark": "未满15岁无父母同行，领队统一办理公证（虚构）",
+    "student_id": 3,
+    "student_no": "STU-2027-103"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.367774+08:00",
+   "prev_hash": "4476f0e2df02b92e18dddcd77e148707e9ff00df26430e2e7a778f2a4404a330",
+   "hash": "f5b001307c77674bd855313713b9a74b8414cfc30573308329fff318c7252b82"
+  },
+  {
+   "id": 80,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "11",
+   "payload": {
+    "doc_no": "E88001103（虚构）",
+    "doc_type": "护照",
+    "expiry_date": "2033-05-30",
+    "student_id": 3,
+    "student_no": "STU-2027-103"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.337223+08:00",
+   "prev_hash": "72be42c8390ffb32b4759e34a7faaa408ff5e1a693b5464edb190b509c2ede2d",
+   "hash": "4476f0e2df02b92e18dddcd77e148707e9ff00df26430e2e7a778f2a4404a330"
+  },
+  {
+   "id": 79,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "consent",
+   "entity_id": "2",
+   "payload": {
+    "consent_type": "敏感信息处理",
+    "individual_consent": true,
+    "program_id": 3,
+    "relation": "父亲",
+    "signer_name": "刘先生（虚构）",
+    "student_id": 3
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.335449+08:00",
+   "prev_hash": "4c4a0093b009ff38b487eb6c041240d403a78711eec139bf60bc5e4cd384220c",
+   "hash": "72be42c8390ffb32b4759e34a7faaa408ff5e1a693b5464edb190b509c2ede2d"
+  },
+  {
+   "id": 78,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "6",
+   "payload": {
+    "channel": "电话",
+    "direction": "呼出",
+    "occurred_at": "2026-11-09 11:00:00",
+    "operator": "顾问乙（虚构）",
+    "student_id": 3,
+    "student_no": "STU-2027-103",
+    "summary": "说明1:10领队/每日家长群报/手机统一保管（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.334527+08:00",
+   "prev_hash": "d3aa926fd7ea21416de6a37a4009510a26108c9eab225bc514f2a03c7dbd91bc",
+   "hash": "4c4a0093b009ff38b487eb6c041240d403a78711eec139bf60bc5e4cd384220c"
+  },
+  {
+   "id": 77,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "5",
+   "payload": {
+    "channel": "微信",
+    "direction": "呼入",
+    "occurred_at": "2026-11-06 20:10:00",
+    "operator": "顾问乙（虚构）",
+    "student_id": 3,
+    "student_no": "STU-2027-103",
+    "summary": "家长咨询寒假宿务营地，关心安全与手机管理（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.333493+08:00",
+   "prev_hash": "39cde4d1f90461de475139bf916a547f4aabbaa8f676a634def0bbe71a6f2ba5",
+   "hash": "d3aa926fd7ea21416de6a37a4009510a26108c9eab225bc514f2a03c7dbd91bc"
+  },
+  {
+   "id": 76,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "program",
+   "entity_id": "3",
+   "payload": {
+    "departure_date": "2027-01-17",
+    "dest_country_count": 1,
+    "emergency_plan": true,
+    "filing_date": "2026-12-10",
+    "filing_status": "已备案",
+    "insurance": {
+     "coverage_per_accident_wan": 1200,
+     "coverage_per_person_wan": 80,
+     "includes_global_rescue": true,
+     "policy_no": "INS-CAMP-2027"
+    },
+    "max_cities_per_country": 1,
+    "name": "2027寒假宿务CIA少儿英语冬令营（虚构）",
+    "partner_school": "CIA（虚构演示）",
+    "return_date": "2027-02-06",
+    "school_verified": true,
+    "status": "筹备中",
+    "student_age_group": "小学",
+    "student_count": 16,
+    "teacher_count": 2,
+    "type": "出境游学"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.332446+08:00",
+   "prev_hash": "0c92c7c5cd192127bfa5779327af0b1fd0004b3589d80605df2760195cb28adc",
+   "hash": "39cde4d1f90461de475139bf916a547f4aabbaa8f676a634def0bbe71a6f2ba5"
+  },
+  {
+   "id": 75,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "payment",
+   "entity_id": "5",
+   "payload": {
+    "amount": "3000",
+    "contract_id": 2,
+    "currency": "CNY",
+    "payee": "示例远航国际游学（虚构）",
+    "type": "定金",
+    "voucher_no": "INV-101-D"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.291200+08:00",
+   "prev_hash": "1ba3e8713ec6b4a94c053001a2307852521200714635caccc4d6724a9f06b234",
+   "hash": "0c92c7c5cd192127bfa5779327af0b1fd0004b3589d80605df2760195cb28adc"
+  },
+  {
+   "id": 74,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "contract",
+   "entity_id": "2",
+   "payload": {
+    "contract_no": "CT-2026-101",
+    "currency": "USD",
+    "refund_rules": [
+     {
+      "ratio": "95",
+      "stage": "开课前4周以上取消"
+     },
+     {
+      "ratio": "70",
+      "stage": "开课前2-4周取消"
+     },
+     {
+      "ratio": "50",
+      "stage": "开课前1-2周取消"
+     },
+     {
+      "ratio": "20",
+      "stage": "开课前1周内取消"
+     },
+     {
+      "ratio": "40",
+      "stage": "在读期间（重病等特例）"
+     },
+     {
+      "ratio": "0",
+      "stage": "开除/自行退学"
+     }
+    ],
+    "service_scope": [
+     "选校咨询",
+     "代办报名",
+     "签证指导",
+     "行前服务"
+    ],
+    "signed_date": "2026-11-15",
+    "status": "履行中",
+    "student_id": 1,
+    "student_no": "STU-2027-101",
+    "total_fee": "2230"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.289758+08:00",
+   "prev_hash": "add77155cd55b37a0885bc4ba6699eb6f080bf65b700e5b384de580753551669",
+   "hash": "1ba3e8713ec6b4a94c053001a2307852521200714635caccc4d6724a9f06b234"
+  },
+  {
+   "id": 73,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "10",
+   "payload": {
+    "doc_no": "LOA-QQ-2027-0110（虚构）",
+    "doc_type": "录取通知书",
+    "issued_date": "2026-11-16",
+    "remark": "2027-01-10 入学，母子同校（虚构）",
+    "student_id": 1,
+    "student_no": "STU-2027-101"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.288592+08:00",
+   "prev_hash": "34e2ec77220941dcdafa68b75a8d3f5ba7df75a92a1904f69d9f2ad857f67bde",
+   "hash": "add77155cd55b37a0885bc4ba6699eb6f080bf65b700e5b384de580753551669"
+  },
+  {
+   "id": 72,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "enrollment",
+   "entity_id": "2",
+   "payload": {
+    "after": "材料准备",
+    "before": "已报名",
+    "remark": "已收护照，待LOA（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.287412+08:00",
+   "prev_hash": "31fdeecf9d39f0fb27638b923603059046af78d73d8a06591d0dceea2c6871ae",
+   "hash": "34e2ec77220941dcdafa68b75a8d3f5ba7df75a92a1904f69d9f2ad857f67bde"
+  },
+  {
+   "id": 71,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-101",
+   "payload": {
+    "after": "已报名",
+    "before": "沟通中",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.285874+08:00",
+   "prev_hash": "37741c529159fd7e7b5dbb31aee46bf3499c51f3fe947ee035b2ec505c02e5b3",
+   "hash": "31fdeecf9d39f0fb27638b923603059046af78d73d8a06591d0dceea2c6871ae"
+  },
+  {
+   "id": 70,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-101",
+   "payload": {
+    "after": "沟通中",
+    "before": "意向",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.284442+08:00",
+   "prev_hash": "7c2b362f85ddfbc4741b00dd7d0ff5904a69e1d5b263beb0f3e2ca5a1420d49a",
+   "hash": "37741c529159fd7e7b5dbb31aee46bf3499c51f3fe947ee035b2ec505c02e5b3"
+  },
+  {
+   "id": 69,
+   "actor": "种子脚本",
+   "action": "confirm",
+   "entity": "quotation",
+   "entity_id": "QT-2026-002",
+   "payload": {
+    "enrollment_program": "QQ English·Family 亲子 ESL（8周·2人间）",
+    "status": "已确认"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.282955+08:00",
+   "prev_hash": "b94d234216f262fc1f2376bf37ecd186af381b3d61a15dcfdace4e3011eb51b2",
+   "hash": "7c2b362f85ddfbc4741b00dd7d0ff5904a69e1d5b263beb0f3e2ca5a1420d49a"
+  },
+  {
+   "id": 68,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "enrollment",
+   "entity_id": "2",
+   "payload": {
+    "accommodation": "2人间",
+    "course_name": "Family 亲子 ESL",
+    "expected_start": "2027-01-10",
+    "pickup_arranged": true,
+    "program_id": 2,
+    "quotation_id": 2,
+    "student_id": 1
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.280954+08:00",
+   "prev_hash": "bbf380239855687f22d92fc4c5f6eb57eab22f16999e28b9fa86abfa21e4c8a3",
+   "hash": "b94d234216f262fc1f2376bf37ecd186af381b3d61a15dcfdace4e3011eb51b2"
+  },
+  {
+   "id": 67,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "program",
+   "entity_id": "2",
+   "payload": {
+    "course_id": 6,
+    "departure_date": "2027-01-10",
+    "name": "QQ English·Family 亲子 ESL（8周·2人间）",
+    "return_date": "2027-03-06",
+    "room_type": "2人间",
+    "school_id": 4,
+    "status": "进行中",
+    "type": "语言研修",
+    "weeks": 8
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.278302+08:00",
+   "prev_hash": "6838bc731fbb7e825cb847a7ad0b26d1822e7a6a65b10ba6688819d02875198f",
+   "hash": "bbf380239855687f22d92fc4c5f6eb57eab22f16999e28b9fa86abfa21e4c8a3"
+  },
+  {
+   "id": 66,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "quotation",
+   "entity_id": "2",
+   "payload": {
+    "course_id": 6,
+    "items": [
+     {
+      "amount": "2080",
+      "currency": "USD",
+      "name": "学费+食宿（USD 260/周 × 8周 · 2人间）"
+     },
+     {
+      "amount": "150",
+      "currency": "USD",
+      "name": "学校注册费（一次性，不退）"
+     },
+     {
+      "amount": "≈38,800 PHP",
+      "currency": "PHP",
+      "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）"
+     },
+     {
+      "amount": "312",
+      "currency": "USD",
+      "internal": true,
+      "name": "学校返佣预估（15%，内部）"
+     }
+    ],
+    "quote_no": "QT-2026-002",
+    "room_type": "2人间",
+    "school_id": 4,
+    "start_date": "2027-01-10",
+    "status": "已发送",
+    "student_id": 1,
+    "total_usd": "2230",
+    "weeks": 8
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.276933+08:00",
+   "prev_hash": "0662127749b0ee97db7ff4e36d6a1d57af9c32288cc78e58043bf43ab3b6037d",
+   "hash": "6838bc731fbb7e825cb847a7ad0b26d1822e7a6a65b10ba6688819d02875198f"
+  },
+  {
+   "id": 65,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "consent",
+   "entity_id": "1",
+   "payload": {
+    "consent_type": "敏感信息处理",
+    "individual_consent": true,
+    "program_id": null,
+    "relation": "母亲",
+    "signer_name": "陈女士（虚构）",
+    "student_id": 1
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.275733+08:00",
+   "prev_hash": "4151d62afb3da0f6410dad2fb6d1384e026239cb6e257cf9b9904bc1386bd1c4",
+   "hash": "0662127749b0ee97db7ff4e36d6a1d57af9c32288cc78e58043bf43ab3b6037d"
+  },
+  {
+   "id": 64,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "9",
+   "payload": {
+    "doc_no": "同行-2026-1101（虚构）",
+    "doc_type": "监护同行证明",
+    "issued_date": "2026-11-10",
+    "remark": "母亲同校 Family 课程，免 WEG（虚构）",
+    "student_id": 1,
+    "student_no": "STU-2027-101"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.273998+08:00",
+   "prev_hash": "888edcfca880d20395f6cdb7573e544fc3063ce9c26cba15ac9fb101c174bf1b",
+   "hash": "4151d62afb3da0f6410dad2fb6d1384e026239cb6e257cf9b9904bc1386bd1c4"
+  },
+  {
+   "id": 63,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "8",
+   "payload": {
+    "doc_no": "E88001101（虚构）",
+    "doc_type": "护照",
+    "expiry_date": "2032-06-30",
+    "student_id": 1,
+    "student_no": "STU-2027-101"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.272739+08:00",
+   "prev_hash": "efe8fdcdc51c0f7b2bdf6c3ffb23e35149874c1872460cc08ffeeeaf8a1a8ba4",
+   "hash": "888edcfca880d20395f6cdb7573e544fc3063ce9c26cba15ac9fb101c174bf1b"
+  },
+  {
+   "id": 62,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "4",
+   "payload": {
+    "channel": "电话",
+    "direction": "呼出",
+    "occurred_at": "2026-11-05 15:00:00",
+    "operator": "顾问丙（虚构）",
+    "student_id": 1,
+    "student_no": "STU-2027-101",
+    "summary": "孩子在线测试A2，推荐Family课程8周（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.270610+08:00",
+   "prev_hash": "611195d12ed6f19c2a196f1c9ee0f33f57e71584141ffe1e4becbfdf5d5161d1",
+   "hash": "efe8fdcdc51c0f7b2bdf6c3ffb23e35149874c1872460cc08ffeeeaf8a1a8ba4"
+  },
+  {
+   "id": 61,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "3",
+   "payload": {
+    "channel": "微信",
+    "direction": "呼入",
+    "occurred_at": "2026-11-02 09:40:00",
+    "operator": "顾问丙（虚构）",
+    "student_id": 1,
+    "student_no": "STU-2027-101",
+    "summary": "妈妈咨询寒假亲子游学，孩子六年级（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.257596+08:00",
+   "prev_hash": "d68a7a301b2c72c37119b9fb15f78856df7808242907acf035771a5c9a0f34a8",
+   "hash": "611195d12ed6f19c2a196f1c9ee0f33f57e71584141ffe1e4becbfdf5d5161d1"
+  },
+  {
+   "id": 60,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "weekly_report",
+   "entity_id": "5",
+   "payload": {
+    "attendance_pct": 100,
+    "enrollment_id": 1,
+    "level": "IELTS 5.0",
+    "parent_notified_at": "2026-11-06 20:00:00",
+    "student_id": 2,
+    "teacher_comment": "模考5.5，保分条款生效在望（虚构）",
+    "test_score": "5.5",
+    "week_no": 8
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.256330+08:00",
+   "prev_hash": "ce9d9be626efacc30d2c0dfee56edea6fa339268a4828eb39bf38952b80eebda",
+   "hash": "d68a7a301b2c72c37119b9fb15f78856df7808242907acf035771a5c9a0f34a8"
+  },
+  {
+   "id": 59,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "weekly_report",
+   "entity_id": "4",
+   "payload": {
+    "attendance_pct": 98,
+    "enrollment_id": 1,
+    "level": "IELTS 5.0",
+    "parent_notified_at": "2026-10-23 20:00:00",
+    "student_id": 2,
+    "teacher_comment": "平台期，教师建议加练口语（虚构）",
+    "test_score": "5.0",
+    "week_no": 6
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.254968+08:00",
+   "prev_hash": "8814e0a23e5236fc305b3f589a61b57266afdb4a979c9fb6e8090d4d04a02040",
+   "hash": "ce9d9be626efacc30d2c0dfee56edea6fa339268a4828eb39bf38952b80eebda"
+  },
+  {
+   "id": 58,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "weekly_report",
+   "entity_id": "3",
+   "payload": {
+    "attendance_pct": 100,
+    "enrollment_id": 1,
+    "level": "IELTS 4.5",
+    "parent_notified_at": "2026-10-09 20:00:00",
+    "student_id": 2,
+    "teacher_comment": "写作结构进步，模考5.0（虚构）",
+    "test_score": "5.0",
+    "week_no": 4
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.236619+08:00",
+   "prev_hash": "3459b7cfe0cc97de2a7ffe5711b0b7986a6d4e94605f7068102d168b6768c65d",
+   "hash": "8814e0a23e5236fc305b3f589a61b57266afdb4a979c9fb6e8090d4d04a02040"
+  },
+  {
+   "id": 57,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "weekly_report",
+   "entity_id": "2",
+   "payload": {
+    "attendance_pct": 100,
+    "enrollment_id": 1,
+    "level": "IELTS 4.0",
+    "parent_notified_at": "2026-09-25 20:00:00",
+    "student_id": 2,
+    "teacher_comment": "词汇量明显提升，周四模考4.5（虚构）",
+    "test_score": "4.5",
+    "week_no": 2
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.235512+08:00",
+   "prev_hash": "ff5040f56e99643d27498e989770d2e45133a03d7bbb6f2c9b56d9cedb25aba5",
+   "hash": "3459b7cfe0cc97de2a7ffe5711b0b7986a6d4e94605f7068102d168b6768c65d"
+  },
+  {
+   "id": 56,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "weekly_report",
+   "entity_id": "1",
+   "payload": {
+    "attendance_pct": null,
+    "enrollment_id": 1,
+    "level": "IELTS 4.0",
+    "parent_notified_at": "2026-09-14 20:00:00",
+    "student_id": 2,
+    "teacher_comment": "分班测试：入中级班，口语偏弱（虚构）",
+    "test_score": "4.0",
+    "week_no": 0
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.233521+08:00",
+   "prev_hash": "8021cfaa11b99ab191bcf90f9612147606fe2d4bb94f869818536a39c99ade8c",
+   "hash": "ff5040f56e99643d27498e989770d2e45133a03d7bbb6f2c9b56d9cedb25aba5"
+  },
+  {
+   "id": 55,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "enrollment",
+   "entity_id": "1",
+   "payload": {
+    "after": "在读",
+    "before": "已入学",
+    "remark": "分班测试完成，正式开课"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.230569+08:00",
+   "prev_hash": "a37b693501d392356f2839b663f45c38cd13ec9298d09deae53e111b674975e7",
+   "hash": "8021cfaa11b99ab191bcf90f9612147606fe2d4bb94f869818536a39c99ade8c"
+  },
+  {
+   "id": 54,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "service_event",
+   "entity_id": "13",
+   "payload": {
+    "event_type": "延签办理",
+    "occurred_at": "2026-10-20 10:00:00",
+    "operator": "学校学生经理（虚构）",
+    "remark": "第一次延签+30天（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.188777+08:00",
+   "prev_hash": "5e078cd55c6f160b10cd42b38624161c7c596de727566a50fbf88f3730183d42",
+   "hash": "a37b693501d392356f2839b663f45c38cd13ec9298d09deae53e111b674975e7"
+  },
+  {
+   "id": 53,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "7",
+   "payload": {
+    "doc_no": "ACR-2026-00871（虚构）",
+    "doc_type": "ACR I-Card",
+    "expiry_date": "2027-10-20",
+    "issued_date": "2026-10-20",
+    "remark": "停留超59天办理，随第一次延签（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.187574+08:00",
+   "prev_hash": "cfbec39ab7c55cc0b574c80aae8fc69d78a0e6119cc965a022f26acf5d99e6a8",
+   "hash": "5e078cd55c6f160b10cd42b38624161c7c596de727566a50fbf88f3730183d42"
+  },
+  {
+   "id": 52,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "service_event",
+   "entity_id": "12",
+   "payload": {
+    "event_type": "SSP办理",
+    "occurred_at": "2026-09-14 11:00:00",
+    "operator": "学校学生经理（虚构）",
+    "remark": "学校代办，披索现付（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.186333+08:00",
+   "prev_hash": "8a524e96426437ac4ee5826ecdf30b78c99a73931402a2832a5b6f2424198189",
+   "hash": "cfbec39ab7c55cc0b574c80aae8fc69d78a0e6119cc965a022f26acf5d99e6a8"
+  },
+  {
+   "id": 51,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "6",
+   "payload": {
+    "doc_no": "SSP-EV-2026-1042（虚构）",
+    "doc_type": "SSP",
+    "expiry_date": "2026-12-05",
+    "issued_date": "2026-09-14",
+    "remark": "特殊学习许可，有效期=课程周数；含SSP E-Card（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.166976+08:00",
+   "prev_hash": "1da17837c4e13e051a4f1b267fe3a93e679f5eac45a0135371a272d8c0fd4303",
+   "hash": "8a524e96426437ac4ee5826ecdf30b78c99a73931402a2832a5b6f2424198189"
+  },
+  {
+   "id": 50,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "payment",
+   "entity_id": "4",
+   "payload": {
+    "amount": "58200",
+    "contract_id": 1,
+    "currency": "PHP",
+    "payee": "EV Academy（虚构）",
+    "proof_file": "学校当地费收据（虚构示例）.pdf",
+    "type": "代收代缴-当地费",
+    "voucher_no": "INV-102-L"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.162904+08:00",
+   "prev_hash": "f16b55df6659a7f2098767d60c2adea9c8adcab75f9d7284a73f83f50e772a25",
+   "hash": "1da17837c4e13e051a4f1b267fe3a93e679f5eac45a0135371a272d8c0fd4303"
+  },
+  {
+   "id": 49,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "service_event",
+   "entity_id": "11",
+   "payload": {
+    "contract_id": 1,
+    "event_type": "接机",
+    "occurred_at": "2026-09-13 21:30:00",
+    "operator": "学校学生经理（虚构）",
+    "remark": "宿务机场接机，费用含在当地费（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.160530+08:00",
+   "prev_hash": "05ded452535688900f2172ef36c0983dafd6621c3692d50812ec9bb5589d90e8",
+   "hash": "f16b55df6659a7f2098767d60c2adea9c8adcab75f9d7284a73f83f50e772a25"
+  },
+  {
+   "id": 48,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "enrollment",
+   "entity_id": "1",
+   "payload": {
+    "after": "已入学",
+    "before": "已缴费",
+    "remark": "9-13接机到校（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.151837+08:00",
+   "prev_hash": "a3e8bc9a30c51fdf8a6b460f375faa9b751b1369675a71a776b10d87af787d26",
+   "hash": "05ded452535688900f2172ef36c0983dafd6621c3692d50812ec9bb5589d90e8"
+  },
+  {
+   "id": 47,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "enrollment",
+   "entity_id": "1",
+   "payload": {
+    "after": "已缴费",
+    "before": "材料准备",
+    "remark": "定金+学费+注册费到账"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.149575+08:00",
+   "prev_hash": "ff3db424806d30ac63de51c2087d02d3fb3eb2d82ed40c16cffabbc35110357b",
+   "hash": "a3e8bc9a30c51fdf8a6b460f375faa9b751b1369675a71a776b10d87af787d26"
+  },
+  {
+   "id": 46,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "enrollment",
+   "entity_id": "1",
+   "payload": {
+    "after": "材料准备",
+    "before": "已报名",
+    "remark": "护照/LOA/签证齐备"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.148026+08:00",
+   "prev_hash": "44c3097695b2fafd15ec3f93ee9cb47efdddf13357d7f9c40963a7f16b3acf1e",
+   "hash": "ff3db424806d30ac63de51c2087d02d3fb3eb2d82ed40c16cffabbc35110357b"
+  },
+  {
+   "id": 45,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-102",
+   "payload": {
+    "after": "在读",
+    "before": "已报名",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.124273+08:00",
+   "prev_hash": "c370f9dd3cafd59b03866588c9d01d36fcd3fd07e037d59dba7575825c21bf0b",
+   "hash": "44c3097695b2fafd15ec3f93ee9cb47efdddf13357d7f9c40963a7f16b3acf1e"
+  },
+  {
+   "id": 44,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-102",
+   "payload": {
+    "after": "已报名",
+    "before": "沟通中",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.112182+08:00",
+   "prev_hash": "62471a405f787dadba2ea1d64e7512e412ab9f6c318f55783e5545e8f3cc1764",
+   "hash": "c370f9dd3cafd59b03866588c9d01d36fcd3fd07e037d59dba7575825c21bf0b"
+  },
+  {
+   "id": 43,
+   "actor": "种子脚本",
+   "action": "stage",
+   "entity": "student",
+   "entity_id": "STU-2027-102",
+   "payload": {
+    "after": "沟通中",
+    "before": "意向",
+    "remark": null
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.109227+08:00",
+   "prev_hash": "47394957c8601b25a74eb33851f1829e4ca5d99208734f74c47634472f98b089",
+   "hash": "62471a405f787dadba2ea1d64e7512e412ab9f6c318f55783e5545e8f3cc1764"
+  },
+  {
+   "id": 42,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "5",
+   "payload": {
+    "doc_no": "INS-PH-2026-102（虚构）",
+    "doc_type": "保险单",
+    "expiry_date": "2026-12-10",
+    "issued_date": "2026-09-05",
+    "remark": "含海外医疗与紧急救援（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.090417+08:00",
+   "prev_hash": "0028e8cab48c5e8b74cfbfb10dd56b95f0e14ede099b4c795fad4b937cc4061b",
+   "hash": "47394957c8601b25a74eb33851f1829e4ca5d99208734f74c47634472f98b089"
+  },
+  {
+   "id": 41,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "service_event",
+   "entity_id": "4",
+   "payload": {
+    "contract_id": 1,
+    "event_type": "行前说明会",
+    "occurred_at": "2026-09-10 19:00:00",
+    "operator": "顾问乙（虚构）",
+    "remark": "eTravel登记/电话卡/换汇/入境文件（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.084749+08:00",
+   "prev_hash": "6580f1e9a5e3f2d3cb080b672dfbcb5d307ea06ea6d847d7e152d4ac36299413",
+   "hash": "0028e8cab48c5e8b74cfbfb10dd56b95f0e14ede099b4c795fad4b937cc4061b"
+  },
+  {
+   "id": 40,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "4",
+   "payload": {
+    "doc_no": "MU5017 2026-09-12（虚构）",
+    "doc_type": "机票",
+    "issued_date": "2026-08-20",
+    "remark": "周日入学·周六离校口径（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.083278+08:00",
+   "prev_hash": "036f98db048fe605673060f56a065d46c9e7460edb324b05c23d6a3942093703",
+   "hash": "6580f1e9a5e3f2d3cb080b672dfbcb5d307ea06ea6d847d7e152d4ac36299413"
+  },
+  {
+   "id": 39,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "3",
+   "payload": {
+    "doc_no": "PH9A-2026-88120（虚构）",
+    "doc_type": "签证",
+    "expiry_date": "2026-11-11",
+    "issued_date": "2026-08-15",
+    "remark": "59天停留，入学后学校代办延签",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.068804+08:00",
+   "prev_hash": "28f6f4268ac73dfbd59a0aaa3cfe7176eb1af5500ba9ae1d08ac0c73d85b66dc",
+   "hash": "036f98db048fe605673060f56a065d46c9e7460edb324b05c23d6a3942093703"
+  },
+  {
+   "id": 38,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "service_event",
+   "entity_id": "3",
+   "payload": {
+    "contract_id": 1,
+    "event_type": "签证办理",
+    "occurred_at": "2026-08-08 09:00:00",
+    "operator": "顾问乙（虚构)",
+    "remark": "凭LOA办9(a)旅游签（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.067629+08:00",
+   "prev_hash": "58190443cc17a529520f3146e80f8dee7ac70ed0760be5c941368535914a1953",
+   "hash": "28f6f4268ac73dfbd59a0aaa3cfe7176eb1af5500ba9ae1d08ac0c73d85b66dc"
+  },
+  {
+   "id": 37,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "payment",
+   "entity_id": "3",
+   "payload": {
+    "amount": "100",
+    "contract_id": 1,
+    "currency": "USD",
+    "payee": "EV Academy（虚构）",
+    "proof_file": "学校INVOICE（虚构示例）.pdf",
+    "type": "代收代缴-注册费",
+    "voucher_no": "INV-102-R"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.066232+08:00",
+   "prev_hash": "aa0faf8478a3b29fc36859c3ef0b7fde78acb45ec66203f273138a45b54059d3",
+   "hash": "58190443cc17a529520f3146e80f8dee7ac70ed0760be5c941368535914a1953"
+  },
+  {
+   "id": 36,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "payment",
+   "entity_id": "2",
+   "payload": {
+    "amount": "3720",
+    "contract_id": 1,
+    "currency": "USD",
+    "payee": "EV Academy（虚构）",
+    "proof_file": "学校INVOICE+电汇回单（虚构示例）.pdf",
+    "type": "代收代缴-学费",
+    "voucher_no": "INV-102-T"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.054437+08:00",
+   "prev_hash": "4b614db6303aa878b42a3bdc069e7e5a48a7ab019e86054b0d7705227f082f51",
+   "hash": "aa0faf8478a3b29fc36859c3ef0b7fde78acb45ec66203f273138a45b54059d3"
+  },
+  {
+   "id": 35,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "payment",
+   "entity_id": "1",
+   "payload": {
+    "amount": "3000",
+    "contract_id": 1,
+    "currency": "CNY",
+    "payee": "示例远航国际游学（虚构）",
+    "type": "定金",
+    "voucher_no": "INV-102-D"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.052500+08:00",
+   "prev_hash": "f4dc438d7868e140b37883885929cf7e2e18d658241fe2bb27f632604f6ca000",
+   "hash": "4b614db6303aa878b42a3bdc069e7e5a48a7ab019e86054b0d7705227f082f51"
+  },
+  {
+   "id": 34,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "contract",
+   "entity_id": "1",
+   "payload": {
+    "contract_no": "CT-2026-102",
+    "currency": "USD",
+    "refund_rules": [
+     {
+      "ratio": "95",
+      "stage": "开课前4周以上取消"
+     },
+     {
+      "ratio": "70",
+      "stage": "开课前2-4周取消"
+     },
+     {
+      "ratio": "50",
+      "stage": "开课前1-2周取消"
+     },
+     {
+      "ratio": "20",
+      "stage": "开课前1周内取消"
+     },
+     {
+      "ratio": "40",
+      "stage": "在读期间（重病等特例）"
+     },
+     {
+      "ratio": "0",
+      "stage": "开除/自行退学"
+     }
+    ],
+    "service_scope": [
+     "选校咨询",
+     "代办报名",
+     "签证指导",
+     "机票协助",
+     "行前服务",
+     "在读跟踪"
+    ],
+    "signed_date": "2026-08-05",
+    "status": "履行中",
+    "student_id": 2,
+    "student_no": "STU-2027-102",
+    "total_fee": "3820"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.049625+08:00",
+   "prev_hash": "9726fd00ba5f73d75f8ab3022fb4ccaf8ad2f6776eea731661265b08a3fbf2b6",
+   "hash": "f4dc438d7868e140b37883885929cf7e2e18d658241fe2bb27f632604f6ca000"
+  },
+  {
+   "id": 33,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "service_event",
+   "entity_id": "2",
+   "payload": {
+    "event_type": "LOA接收",
+    "occurred_at": "2026-08-01 15:00:00",
+    "operator": "顾问乙（虚构）",
+    "remark": "床位锁定，2026-09-13 入学（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.047929+08:00",
+   "prev_hash": "46dbb5f337594a06679478f8d06a097d6a78e5f5f910c6b19ded24a56d12f9dd",
+   "hash": "9726fd00ba5f73d75f8ab3022fb4ccaf8ad2f6776eea731661265b08a3fbf2b6"
+  },
+  {
+   "id": 32,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "2",
+   "payload": {
+    "doc_no": "LOA-EV-2026-0913（虚构）",
+    "doc_type": "录取通知书",
+    "issued_date": "2026-08-01",
+    "remark": "学校1个工作日出 LOA+INVOICE（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.046286+08:00",
+   "prev_hash": "5375c33ad9b15c6b5e87904f366ce260373222fa9d87b2f0120a3501ab710ca7",
+   "hash": "46dbb5f337594a06679478f8d06a097d6a78e5f5f910c6b19ded24a56d12f9dd"
+  },
+  {
+   "id": 31,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "service_event",
+   "entity_id": "1",
+   "payload": {
+    "contract_id": null,
+    "event_type": "报名材料递交",
+    "occurred_at": "2026-07-29 10:30:00",
+    "operator": "顾问乙（虚构）",
+    "remark": "报名表+护照复印件递交 EV（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.043902+08:00",
+   "prev_hash": "b39d5580a20256bf9bc80def3053204a12566c379c54f7bbf6a6283265a49234",
+   "hash": "5375c33ad9b15c6b5e87904f366ce260373222fa9d87b2f0120a3501ab710ca7"
+  },
+  {
+   "id": 30,
+   "actor": "种子脚本",
+   "action": "confirm",
+   "entity": "quotation",
+   "entity_id": "QT-2026-001",
+   "payload": {
+    "enrollment_program": "EV Academy·IELTS 保分班（12周·4人间）",
+    "status": "已确认"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.039613+08:00",
+   "prev_hash": "3f1ef09b649d99476f85b2110fceed389aadb98e9e34f0dbc90b6d9345257f27",
+   "hash": "b39d5580a20256bf9bc80def3053204a12566c379c54f7bbf6a6283265a49234"
+  },
+  {
+   "id": 29,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "enrollment",
+   "entity_id": "1",
+   "payload": {
+    "accommodation": "4人间",
+    "course_name": "IELTS 保分班",
+    "expected_start": "2026-09-13",
+    "pickup_arranged": true,
+    "program_id": 1,
+    "quotation_id": 1,
+    "student_id": 2
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.028482+08:00",
+   "prev_hash": "c2c252a7fbbb476c2941c83359c50a12e52f1b99cca071200e39e5308d15210f",
+   "hash": "3f1ef09b649d99476f85b2110fceed389aadb98e9e34f0dbc90b6d9345257f27"
+  },
+  {
+   "id": 28,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "program",
+   "entity_id": "1",
+   "payload": {
+    "course_id": 1,
+    "departure_date": "2026-09-13",
+    "name": "EV Academy·IELTS 保分班（12周·4人间）",
+    "return_date": "2026-12-05",
+    "room_type": "4人间",
+    "school_id": 1,
+    "status": "进行中",
+    "type": "语言研修",
+    "weeks": 12
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:34.023683+08:00",
+   "prev_hash": "ddaf523f423f7027f2ff92b9115f8c35c637c29f2c8a8c168dd84317ee5a3eb2",
+   "hash": "c2c252a7fbbb476c2941c83359c50a12e52f1b99cca071200e39e5308d15210f"
+  },
+  {
+   "id": 27,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "quotation",
+   "entity_id": "1",
+   "payload": {
+    "course_id": 1,
+    "items": [
+     {
+      "amount": "3720",
+      "currency": "USD",
+      "name": "学费+食宿（USD 310/周 × 12周 · 4人间）"
+     },
+     {
+      "amount": "100",
+      "currency": "USD",
+      "name": "学校注册费（一次性，不退）"
+     },
+     {
+      "amount": "≈58,200 PHP",
+      "currency": "PHP",
+      "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）"
+     },
+     {
+      "amount": "930",
+      "currency": "USD",
+      "internal": true,
+      "name": "学校返佣预估（25%，内部）"
+     }
+    ],
+    "quote_no": "QT-2026-001",
+    "room_type": "4人间",
+    "school_id": 1,
+    "start_date": "2026-09-13",
+    "status": "已发送",
+    "student_id": 2,
+    "total_usd": "3820",
+    "weeks": 12
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.982213+08:00",
+   "prev_hash": "3e80fd424b669e08cd3f0b28af425795667042b474115f87972e7f0fd070d914",
+   "hash": "ddaf523f423f7027f2ff92b9115f8c35c637c29f2c8a8c168dd84317ee5a3eb2"
+  },
+  {
+   "id": 26,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "document",
+   "entity_id": "1",
+   "payload": {
+    "doc_no": "E88001021（虚构）",
+    "doc_type": "护照",
+    "expiry_date": "2033-03-02",
+    "student_id": 2,
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.974653+08:00",
+   "prev_hash": "02a8a2e1023ac6a4f21226864a59d865bba1a8e1bdc35bbe5f89ca400c21990a",
+   "hash": "3e80fd424b669e08cd3f0b28af425795667042b474115f87972e7f0fd070d914"
+  },
+  {
+   "id": 25,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "2",
+   "payload": {
+    "channel": "电话",
+    "direction": "呼出",
+    "occurred_at": "2026-07-22 10:00:00",
+    "operator": "顾问乙（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102",
+    "summary": "免费在线测试：CEFR B1+，摸底约雅思4.0（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.971964+08:00",
+   "prev_hash": "64ffa085fdf358726b86321f6d3792aa63334093c678f7476111239528bcf0b2",
+   "hash": "02a8a2e1023ac6a4f21226864a59d865bba1a8e1bdc35bbe5f89ca400c21990a"
+  },
+  {
+   "id": 24,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "communication",
+   "entity_id": "1",
+   "payload": {
+    "channel": "微信",
+    "direction": "呼入",
+    "occurred_at": "2026-07-20 14:20:00",
+    "operator": "顾问乙（虚构）",
+    "student_id": 2,
+    "student_no": "STU-2027-102",
+    "summary": "咨询菲律宾雅思保分班，对比宿务/碧瑶（虚构）"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.970546+08:00",
+   "prev_hash": "da1c1001ab10389bc0b684ccda3392a29358acaf1db3bab3e1477c48bcb798f0",
+   "hash": "64ffa085fdf358726b86321f6d3792aa63334093c678f7476111239528bcf0b2"
+  },
+  {
+   "id": 23,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "student",
+   "entity_id": "STU-2027-105",
+   "payload": {
+    "birth_date": "2003-01-22",
+    "name": "学员小汐（虚构）",
+    "notes": "大四学生，寒假短期提升口语，比价中（虚构）",
+    "student_no": "STU-2027-105"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.968556+08:00",
+   "prev_hash": "4f218192fc4eb0294e4d29dc910274ba5fce0786cca01f8355f0d3380f2c2eb8",
+   "hash": "da1c1001ab10389bc0b684ccda3392a29358acaf1db3bab3e1477c48bcb798f0"
+  },
+  {
+   "id": 22,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "student",
+   "entity_id": "STU-2027-104",
+   "payload": {
+    "birth_date": "1998-07-15",
+    "name": "学员小澄（虚构）",
+    "notes": "职场学员，年假充电（虚构）",
+    "student_no": "STU-2027-104"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.967223+08:00",
+   "prev_hash": "cd3a2bce366c223a0fc074bc9e4bd73aa16216876f3a491837567ded0a1a0065",
+   "hash": "4f218192fc4eb0294e4d29dc910274ba5fce0786cca01f8355f0d3380f2c2eb8"
+  },
+  {
+   "id": 21,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "student",
+   "entity_id": "STU-2027-103",
+   "payload": {
+    "birth_date": "2012-05-30",
+    "guardian_id_masked": "3701**********0103",
+    "guardian_name": "刘先生（虚构）",
+    "guardian_phone": "13800000103",
+    "name": "学员小澈（虚构）",
+    "student_no": "STU-2027-103"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.966101+08:00",
+   "prev_hash": "33a5c453999dd277355a767df696ca41519e542028c58c3f82137b0446ac8fca",
+   "hash": "cd3a2bce366c223a0fc074bc9e4bd73aa16216876f3a491837567ded0a1a0065"
+  },
+  {
+   "id": 20,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "student",
+   "entity_id": "STU-2027-102",
+   "payload": {
+    "birth_date": "2005-03-02",
+    "name": "学员小航（虚构）",
+    "notes": "大三学生，考研英语转雅思，目标6.0（虚构）",
+    "student_no": "STU-2027-102"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.964822+08:00",
+   "prev_hash": "8573b43eabc29938d5398137c44d12454616cfc764502a62d130f09ad7653713",
+   "hash": "33a5c453999dd277355a767df696ca41519e542028c58c3f82137b0446ac8fca"
+  },
+  {
+   "id": 19,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "student",
+   "entity_id": "STU-2027-101",
+   "payload": {
+    "birth_date": "2012-08-20",
+    "guardian_id_masked": "3701**********0101",
+    "guardian_name": "陈女士（虚构）",
+    "guardian_phone": "13800000101",
+    "name": "学员小雨（虚构）",
+    "notes": "妈妈计划陪同赴菲上亲子课程（虚构）",
+    "student_no": "STU-2027-101"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.962909+08:00",
+   "prev_hash": "75787f3cb3ad6eb7d0dd58311120247bd8287380e249fa7d07fbd4760f8b3568",
+   "hash": "8573b43eabc29938d5398137c44d12454616cfc764502a62d130f09ad7653713"
+  },
+  {
+   "id": 18,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "course",
+   "entity_id": "8",
+   "payload": {
+    "course_type": "冬夏令营",
+    "lessons": "1对1×2 + 团体×4 + 营地活动",
+    "min_weeks": 3,
+    "name": "Junior Camp 寒假营",
+    "notes": "9-15岁，含SSP/WEG/接机/活动/保险，领队师生比1:10（虚构演示）",
+    "room_prices": {
+     "3人间": 560,
+     "4人间": 520
+    },
+    "school_id": 6,
+    "school_name": "CIA"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.960939+08:00",
+   "prev_hash": "72be785430bcf61633a92a91b41491724d0e9a0ad519e29fe4794960ff23198c",
+   "hash": "75787f3cb3ad6eb7d0dd58311120247bd8287380e249fa7d07fbd4760f8b3568"
+  },
+  {
+   "id": 17,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "school",
+   "entity_id": "6",
+   "payload": {
+    "commission_rate": "15",
+    "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+    "name": "CIA",
+    "notes": "度假村式校园，青少年营地管理成熟（虚构演示）",
+    "region": "宿务",
+    "registration_fee_usd": "100",
+    "style": "度假村型",
+    "verified": true
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.959578+08:00",
+   "prev_hash": "c34b415737e09356c9f5659ef8a179a02aa2de30e6e2049b17c5d51d0859b1fb",
+   "hash": "72be785430bcf61633a92a91b41491724d0e9a0ad519e29fe4794960ff23198c"
+  },
+  {
+   "id": 16,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "course",
+   "entity_id": "7",
+   "payload": {
+    "course_type": "密集ESL",
+    "lessons": "1对1×4 + 团体×4",
+    "min_weeks": 4,
+    "name": "密集 ESL",
+    "room_prices": {
+     "1人间": 300,
+     "2人间": 230,
+     "3人间": 195,
+     "4人间": 170
+    },
+    "school_id": 5,
+    "school_name": "PINES"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.957894+08:00",
+   "prev_hash": "065210a40793e7926edbbb0990cbeebcf806ba9a2bbdf373b828c8507c864149",
+   "hash": "c34b415737e09356c9f5659ef8a179a02aa2de30e6e2049b17c5d51d0859b1fb"
+  },
+  {
+   "id": 15,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "school",
+   "entity_id": "5",
+   "payload": {
+    "commission_rate": "25",
+    "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+    "name": "PINES",
+    "notes": "碧瑶老牌斯巴达，气候凉爽、学费最低，雅思口碑强（虚构演示）",
+    "region": "碧瑶",
+    "registration_fee_usd": "100",
+    "style": "斯巴达",
+    "verified": true
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.940668+08:00",
+   "prev_hash": "2291e4deabac50a3952045e2dbcae3ea699d36e65916ac23b8e8ebbe074aa461",
+   "hash": "065210a40793e7926edbbb0990cbeebcf806ba9a2bbdf373b828c8507c864149"
+  },
+  {
+   "id": 14,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "course",
+   "entity_id": "6",
+   "payload": {
+    "course_type": "亲子",
+    "lessons": "1对1×4 + 团体×2",
+    "min_weeks": 4,
+    "name": "Family 亲子 ESL",
+    "notes": "15岁以下学员须家长同校上课（虚构演示）",
+    "room_prices": {
+     "1人间": 330,
+     "2人间": 260,
+     "3人间": 225,
+     "4人间": 200
+    },
+    "school_id": 4,
+    "school_name": "QQ English"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.939442+08:00",
+   "prev_hash": "2b0a44b6a22d7ea1a10d8a83ca75beb7cbe6f6c55a7609f69c297d66a4faf6c5",
+   "hash": "2291e4deabac50a3952045e2dbcae3ea699d36e65916ac23b8e8ebbe074aa461"
+  },
+  {
+   "id": 13,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "school",
+   "entity_id": "4",
+   "payload": {
+    "commission_rate": "15",
+    "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+    "name": "QQ English",
+    "notes": "Callan教学法官方认证校，每周一开课，可自选排课（虚构演示）",
+    "region": "宿务",
+    "registration_fee_usd": "150",
+    "style": "自律型",
+    "verified": true
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.936715+08:00",
+   "prev_hash": "047aab5b48b34bc34b55599acfbf20844feb435d00446dddfe659a91c87fbbb2",
+   "hash": "2b0a44b6a22d7ea1a10d8a83ca75beb7cbe6f6c55a7609f69c297d66a4faf6c5"
+  },
+  {
+   "id": 12,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "course",
+   "entity_id": "5",
+   "payload": {
+    "course_type": "商务英语",
+    "lessons": "1对1×4 + 团体×3",
+    "min_weeks": 4,
+    "name": "商务英语",
+    "room_prices": {
+     "1人间": 350,
+     "2人间": 275,
+     "3人间": 240
+    },
+    "school_id": 3,
+    "school_name": "Philinter"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.919468+08:00",
+   "prev_hash": "b12b1ddef1cb57855e0d0a97d7f316694ba4f2c0c18bba80264185f0e0a7d179",
+   "hash": "047aab5b48b34bc34b55599acfbf20844feb435d00446dddfe659a91c87fbbb2"
+  },
+  {
+   "id": 11,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "school",
+   "entity_id": "3",
+   "payload": {
+    "commission_rate": "20",
+    "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+    "name": "Philinter",
+    "notes": "Mactan岛老牌校，距机场10分钟，商务英语见长（虚构演示）",
+    "region": "宿务",
+    "registration_fee_usd": "150",
+    "style": "半斯巴达",
+    "verified": true
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.914283+08:00",
+   "prev_hash": "ccd2620a4e75a9c1234c616d1d5118357df39ddc9a5226824db924de88fde810",
+   "hash": "b12b1ddef1cb57855e0d0a97d7f316694ba4f2c0c18bba80264185f0e0a7d179"
+  },
+  {
+   "id": 10,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "course",
+   "entity_id": "4",
+   "payload": {
+    "course_type": "TOEIC保分",
+    "lessons": "1对1×4 + 团体×3",
+    "min_weeks": 8,
+    "name": "TOEIC 保分班",
+    "room_prices": {
+     "1人间": 360,
+     "2人间": 290,
+     "3人间": 255,
+     "4人间": 230
+    },
+    "school_id": 2,
+    "school_name": "SMEAG"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.910668+08:00",
+   "prev_hash": "77c124a53f9a4e21f83c0890b4bb444e391eb2e2351955b763dac66686bb076d",
+   "hash": "ccd2620a4e75a9c1234c616d1d5118357df39ddc9a5226824db924de88fde810"
+  },
+  {
+   "id": 9,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "course",
+   "entity_id": "3",
+   "payload": {
+    "course_type": "ESL",
+    "lessons": "1对1×4 + 团体×2 + 选修×4",
+    "min_weeks": 4,
+    "name": "ESL 一般英文",
+    "room_prices": {
+     "1人间": 310,
+     "2人间": 240,
+     "3人间": 205,
+     "4人间": 180
+    },
+    "school_id": 2,
+    "school_name": "SMEAG"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.909701+08:00",
+   "prev_hash": "86d2eed08ee6a454db9a69ddd3a60ca124d4d5e06a6959c0f1d16121f3b573cf",
+   "hash": "77c124a53f9a4e21f83c0890b4bb444e391eb2e2351955b763dac66686bb076d"
+  },
+  {
+   "id": 8,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "school",
+   "entity_id": "2",
+   "payload": {
+    "commission_rate": "20",
+    "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+    "name": "SMEAG",
+    "notes": "宿务唯一雅思+托业+托福官方考场，Capital校区前4周强制斯巴达（虚构演示）",
+    "region": "宿务",
+    "registration_fee_usd": "100",
+    "style": "半斯巴达",
+    "verified": true
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.908451+08:00",
+   "prev_hash": "ddf46d51f2956f282b8286f97f98b8af34e2fb744779fe78b636a554c5daadff",
+   "hash": "86d2eed08ee6a454db9a69ddd3a60ca124d4d5e06a6959c0f1d16121f3b573cf"
+  },
+  {
+   "id": 7,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "course",
+   "entity_id": "2",
+   "payload": {
+    "course_type": "密集ESL",
+    "lessons": "1对1×5 + 团体×2 + 夜课×2",
+    "min_weeks": 4,
+    "name": "密集 ESL",
+    "room_prices": {
+     "1人间": 380,
+     "2人间": 310,
+     "3人间": 275,
+     "4人间": 255
+    },
+    "school_id": 1,
+    "school_name": "EV Academy"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.898312+08:00",
+   "prev_hash": "03b1274e725331d09e5a229cface6e2f2ad887c09ee6ee0b49817d5c82792ddb",
+   "hash": "ddf46d51f2956f282b8286f97f98b8af34e2fb744779fe78b636a554c5daadff"
+  },
+  {
+   "id": 6,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "course",
+   "entity_id": "1",
+   "payload": {
+    "course_type": "IELTS保分",
+    "guarantee": "未达目标分免费延长就读（免学费，食宿自理）；要求出勤≥97%且模考全勤（虚构演示）",
+    "lessons": "1对1×4 + 团体×3",
+    "min_weeks": 12,
+    "name": "IELTS 保分班",
+    "room_prices": {
+     "1人间": 430,
+     "2人间": 365,
+     "3人间": 330,
+     "4人间": 310
+    },
+    "school_id": 1,
+    "school_name": "EV Academy"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.897273+08:00",
+   "prev_hash": "91da658b3cef671e19c825a348280df0d685cc4da685414a00a68e327c008c87",
+   "hash": "03b1274e725331d09e5a229cface6e2f2ad887c09ee6ee0b49817d5c82792ddb"
+  },
+  {
+   "id": 5,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "school",
+   "entity_id": "1",
+   "payload": {
+    "commission_rate": "25",
+    "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+    "name": "EV Academy",
+    "notes": "雅思强化标杆校，每日词汇测验+每周四全真模考（虚构演示）",
+    "region": "宿务",
+    "registration_fee_usd": "100",
+    "style": "斯巴达",
+    "verified": true
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.895842+08:00",
+   "prev_hash": "f5ca09316df4aeb77f556d20149e0e5f7e156c7428ef762bb6121af881141953",
+   "hash": "91da658b3cef671e19c825a348280df0d685cc4da685414a00a68e327c008c87"
+  },
+  {
+   "id": 4,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "staff",
+   "entity_id": "3",
+   "payload": {
+    "agency_id": 1,
+    "filing_status": "未备案",
+    "id_card_masked": "3701**********0033",
+    "name": "顾问丙（虚构）",
+    "no_crime_declaration": false,
+    "role": "顾问"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.894441+08:00",
+   "prev_hash": "848c8868b1f5d33b7bef597c4e8a1784cb623a82140320c5efac7a34be52cc4e",
+   "hash": "f5ca09316df4aeb77f556d20149e0e5f7e156c7428ef762bb6121af881141953"
+  },
+  {
+   "id": 3,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "staff",
+   "entity_id": "2",
+   "payload": {
+    "agency_id": 1,
+    "expiry_date": "2027-10-20",
+    "filing_date": "2026-10-20",
+    "filing_status": "已备案",
+    "id_card_masked": "3701**********0022",
+    "name": "顾问乙（虚构）",
+    "no_crime_declaration": true,
+    "role": "顾问"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.871094+08:00",
+   "prev_hash": "8fd16d78710e9bb778cd3b660c580bbc12aee06250987e459806624b758a58c8",
+   "hash": "848c8868b1f5d33b7bef597c4e8a1784cb623a82140320c5efac7a34be52cc4e"
+  },
+  {
+   "id": 2,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "staff",
+   "entity_id": "1",
+   "payload": {
+    "agency_id": 1,
+    "expiry_date": "2027-10-20",
+    "filing_date": "2026-10-20",
+    "filing_status": "已备案",
+    "id_card_masked": "3701**********0011",
+    "name": "负责人甲（虚构）",
+    "no_crime_declaration": true,
+    "role": "法定代表人"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.870038+08:00",
+   "prev_hash": "1045b9085007f9b50f9f38b52ac9233dc62f45265801762cb193a87b72f76910",
+   "hash": "8fd16d78710e9bb778cd3b660c580bbc12aee06250987e459806624b758a58c8"
+  },
+  {
+   "id": 1,
+   "actor": "种子脚本",
+   "action": "create",
+   "entity": "agency",
+   "entity_id": "1",
+   "payload": {
+    "filing_date": "2026-10-20",
+    "filing_no": "BA-2026-DEMO-0841-001",
+    "filing_status": "已备案",
+    "license_expiry": "2028-06-30",
+    "name": "示例远航国际游学（虚构）",
+    "outbound_licensed": true,
+    "policy_documents": [
+     "人员管理制度",
+     "教育培训制度",
+     "资料保存制度",
+     "数据安全管理制度",
+     "合规管理制度"
+    ],
+    "premise_proof": "办公场所租赁合同（虚构示例）.pdf",
+    "travel_license_no": "L-SD-DEMO2026001",
+    "uscc": "91370000DEMO2026XYZ1"
+   },
+   "remark": null,
+   "created_at": "2026-11-18T14:36:33.855429+08:00",
+   "prev_hash": "",
+   "hash": "1045b9085007f9b50f9f38b52ac9233dc62f45265801762cb193a87b72f76910"
+  }
+ ],
+ "total": 110
+}

@@ -1,0 +1,57 @@
+[
+ {
+  "student_no": "STU-2027-101",
+  "name": "学员小雨（虚构）",
+  "birth_date": "2012-08-20",
+  "stage": "已报名",
+  "guardian_name": "陈女士（虚构）",
+  "guardian_phone": "13800000101",
+  "guardian_id_masked": "3701**********0101",
+  "notes": "妈妈计划陪同赴菲上亲子课程（虚构）",
+  "id": 1
+ },
+ {
+  "student_no": "STU-2027-102",
+  "name": "学员小航（虚构）",
+  "birth_date": "2005-03-02",
+  "stage": "在读",
+  "guardian_name": null,
+  "guardian_phone": null,
+  "guardian_id_masked": null,
+  "notes": "大三学生，考研英语转雅思，目标6.0（虚构）",
+  "id": 2
+ },
+ {
+  "student_no": "STU-2027-103",
+  "name": "学员小澈（虚构）",
+  "birth_date": "2012-05-30",
+  "stage": "已报名",
+  "guardian_name": "刘先生（虚构）",
+  "guardian_phone": "13800000103",
+  "guardian_id_masked": "3701**********0103",
+  "notes": null,
+  "id": 3
+ },
+ {
+  "student_no": "STU-2027-104",
+  "name": "学员小澄（虚构）",
+  "birth_date": "1998-07-15",
+  "stage": "已流失",
+  "guardian_name": null,
+  "guardian_phone": null,
+  "guardian_id_masked": null,
+  "notes": "职场学员，年假充电（虚构）",
+  "id": 4
+ },
+ {
+  "student_no": "STU-2027-105",
+  "name": "学员小汐（虚构）",
+  "birth_date": "2003-01-22",
+  "stage": "沟通中",
+  "guardian_name": null,
+  "guardian_phone": null,
+  "guardian_id_masked": null,
+  "notes": "大四学生，寒假短期提升口语，比价中（虚构）",
+  "id": 5
+ }
+]

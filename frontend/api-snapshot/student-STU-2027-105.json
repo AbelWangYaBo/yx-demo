@@ -1,0 +1,123 @@
+{
+ "student": {
+  "id": 5,
+  "student_no": "STU-2027-105",
+  "name": "学员小汐（虚构）",
+  "birth_date": "2003-01-22",
+  "stage": "沟通中",
+  "guardian_name": null,
+  "guardian_phone": null,
+  "guardian_id_masked": null,
+  "notes": "大四学生，寒假短期提升口语，比价中（虚构）"
+ },
+ "is_minor": false,
+ "enrollments": [],
+ "quotations": [
+  {
+   "id": 4,
+   "quote_no": "QT-2026-004",
+   "school_id": 2,
+   "course_id": 3,
+   "school_name": "SMEAG",
+   "course_name": "ESL 一般英文",
+   "weeks": 4,
+   "room_type": "2人间",
+   "start_date": "2027-01-10",
+   "items": [
+    {
+     "name": "学费+食宿（USD 240/周 × 4周 · 2人间）",
+     "amount": "960",
+     "currency": "USD"
+    },
+    {
+     "name": "学校注册费（一次性，不退）",
+     "amount": "100",
+     "currency": "USD"
+    },
+    {
+     "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）",
+     "amount": "≈19,400 PHP",
+     "currency": "PHP"
+    },
+    {
+     "name": "学校返佣预估（20%，内部）",
+     "amount": "192",
+     "currency": "USD",
+     "internal": true
+    }
+   ],
+   "total_usd": "1060",
+   "status": "已发送",
+   "created_at": "2026-11-18T14:36:34.422342"
+  },
+  {
+   "id": 5,
+   "quote_no": "QT-2026-005",
+   "school_id": 5,
+   "course_id": 7,
+   "school_name": "PINES",
+   "course_name": "密集 ESL",
+   "weeks": 4,
+   "room_type": "2人间",
+   "start_date": "2027-01-10",
+   "items": [
+    {
+     "name": "学费+食宿（USD 230/周 × 4周 · 2人间）",
+     "amount": "920",
+     "currency": "USD"
+    },
+    {
+     "name": "学校注册费（一次性，不退）",
+     "amount": "100",
+     "currency": "USD"
+    },
+    {
+     "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）",
+     "amount": "≈19,400 PHP",
+     "currency": "PHP"
+    },
+    {
+     "name": "学校返佣预估（25%，内部）",
+     "amount": "230",
+     "currency": "USD",
+     "internal": true
+    }
+   ],
+   "total_usd": "1020",
+   "status": "草稿",
+   "created_at": "2026-11-18T14:36:34.426871"
+  }
+ ],
+ "contracts": [],
+ "service_events": [
+  {
+   "id": 27,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.420461",
+   "operator": "种子脚本",
+   "remark": "学员阶段：意向→沟通中（比价中（虚构））"
+  }
+ ],
+ "consents": [],
+ "documents": [],
+ "communications": [
+  {
+   "id": 10,
+   "channel": "电话",
+   "direction": "呼出",
+   "occurred_at": "2026-11-15T10:00:00",
+   "operator": "顾问丙（虚构）",
+   "summary": "免费CEFR测试B1；宿务性价比 vs 碧瑶低价（虚构）"
+  },
+  {
+   "id": 9,
+   "channel": "微信",
+   "direction": "呼入",
+   "occurred_at": "2026-11-14T21:00:00",
+   "operator": "顾问丙（虚构）",
+   "summary": "寒假4周，口语冲刺，预算有限（虚构）"
+  }
+ ],
+ "audit_count": 4
+}

@@ -1,0 +1,80 @@
+[
+ {
+  "name": "EV Academy",
+  "region": "宿务",
+  "country": "菲律宾",
+  "style": "斯巴达",
+  "commission_rate": "25",
+  "registration_fee_usd": "100",
+  "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+  "verified": true,
+  "notes": "雅思强化标杆校，每日词汇测验+每周四全真模考（虚构演示）",
+  "id": 1,
+  "created_at": "2026-11-18T14:36:33.895705"
+ },
+ {
+  "name": "SMEAG",
+  "region": "宿务",
+  "country": "菲律宾",
+  "style": "半斯巴达",
+  "commission_rate": "20",
+  "registration_fee_usd": "100",
+  "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+  "verified": true,
+  "notes": "宿务唯一雅思+托业+托福官方考场，Capital校区前4周强制斯巴达（虚构演示）",
+  "id": 2,
+  "created_at": "2026-11-18T14:36:33.908333"
+ },
+ {
+  "name": "Philinter",
+  "region": "宿务",
+  "country": "菲律宾",
+  "style": "半斯巴达",
+  "commission_rate": "20",
+  "registration_fee_usd": "150",
+  "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+  "verified": true,
+  "notes": "Mactan岛老牌校，距机场10分钟，商务英语见长（虚构演示）",
+  "id": 3,
+  "created_at": "2026-11-18T14:36:33.914193"
+ },
+ {
+  "name": "QQ English",
+  "region": "宿务",
+  "country": "菲律宾",
+  "style": "自律型",
+  "commission_rate": "15",
+  "registration_fee_usd": "150",
+  "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+  "verified": true,
+  "notes": "Callan教学法官方认证校，每周一开课，可自选排课（虚构演示）",
+  "id": 4,
+  "created_at": "2026-11-18T14:36:33.936460"
+ },
+ {
+  "name": "PINES",
+  "region": "碧瑶",
+  "country": "菲律宾",
+  "style": "斯巴达",
+  "commission_rate": "25",
+  "registration_fee_usd": "100",
+  "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+  "verified": true,
+  "notes": "碧瑶老牌斯巴达，气候凉爽、学费最低，雅思口碑强（虚构演示）",
+  "id": 5,
+  "created_at": "2026-11-18T14:36:33.940603"
+ },
+ {
+  "name": "CIA",
+  "region": "宿务",
+  "country": "菲律宾",
+  "style": "度假村型",
+  "commission_rate": "15",
+  "registration_fee_usd": "100",
+  "cooperation_agreement": "2026合作协议（虚构示例）.pdf",
+  "verified": true,
+  "notes": "度假村式校园，青少年营地管理成熟（虚构演示）",
+  "id": 6,
+  "created_at": "2026-11-18T14:36:33.959507"
+ }
+]

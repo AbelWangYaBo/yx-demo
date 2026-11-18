@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>游学留学机构合规管理系统（内部版）</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" v-cloak>
+  <header>
+    <h1>游学留学机构合规管理系统 <span class="badge">内部版 · 数据全部虚构</span></h1>
+    <p class="sub">菲律宾游学专线 · 841号令双重备案 · 操作留痕审计链 · 学员全流程管线</p>
+    <nav>
+      <button v-for="t in tabs" :key="t.key" class="nav-btn" :class="{active: page===t.key}" @click="go(t.key)">{{ t.label }}</button>
+    </nav>
+    <p v-if="staticMode" class="static-banner">📦 {{ STATIC_HINT }}</p>
+  </header>
+
+  <main>
+    <!-- ========== 合规总览 ========== -->
+    <section v-if="page==='overview'">
+      <h2>合规总览</h2>
+      <template v-if="overview">
+        <div class="cards">
+          <div class="card" :class="overview.audit_chain.valid ? 'ok' : 'err'">
+            <h3>审计链</h3>
+            <p class="big">{{ overview.audit_chain.valid ? '完整' : '已破坏!' }}</p>
+            <p>已校验 {{ overview.audit_chain.checked }} 条</p>
+          </div>
+          <div class="card" :class="overview.agency && overview.agency.filing_status==='已备案' ? 'ok' : 'warning'">
+            <h3>本机构出入境中介备案（841号令）</h3>
+            <p class="big">{{ dash(overview.agency && overview.agency.filing_status) }}</p>
+            <p>凭证号: {{ dash(overview.agency && overview.agency.filing_no) }}</p>
+          </div>
+          <div class="card">
+            <h3>出境游资质</h3>
+            <p class="big">{{ overview.agency && overview.agency.outbound_licensed ? '已持有' : '未持有' }}</p>
+            <p>证照到期: {{ dash(overview.agency && overview.agency.license_expiry) }}</p>
+          </div>
+          <div class="card">
+            <h3>风险活动</h3>
+            <p class="big">{{ overview.programs_at_risk.length }}</p>
+            <p>error 级违规</p>
+          </div>
+        </div>
+        <div class="cards" v-if="overview.business">
+          <div class="card">
+            <h3>在读学员</h3>
+            <p class="big">{{ overview.business.in_study }}</p>
+            <p>「在读」阶段报名</p>
+          </div>
+          <div class="card">
+            <h3>待跟进报价</h3>
+            <p class="big">{{ overview.business.pending_quotes }}</p>
+            <p>草稿 + 已发送</p>
+          </div>
+          <div class="card">
+            <h3>本月入学</h3>
+            <p class="big">{{ overview.business.arrivals_this_month }}</p>
+            <p>已入学/在读/已毕业</p>
+          </div>
+          <div class="card">
+            <h3>佣金（内部，USD）</h3>
+            <p class="big">${{ overview.business.settleable_commission_usd }} / ${{ overview.business.est_commission_usd }}</p>
+            <p>已入学应结 / 已确认预估</p>
+          </div>
+        </div>
+        <div class="cards" v-if="overview.funnel">
+          <div class="card" style="flex:1.4">
+            <h3>转化漏斗 · 学员生命周期</h3>
+            <p>
+              <span class="chip" v-for="(n, s) in overview.funnel.student_stages" :key="s">{{ s }}：{{ n }}</span>
+            </p>
+            <p class="muted">意向 → 沟通中 → 已报名 → 在读 → 已毕业（已流失单列）</p>
+          </div>
+          <div class="card" style="flex:1">
+            <h3>转化漏斗 · 报价状态</h3>
+            <p>
+              <span class="chip" v-for="(n, s) in overview.funnel.quote_status" :key="s">{{ s }}：{{ n }}</span>
+            </p>
+            <p class="muted">草稿 → 已发送 → 已确认（已作废单列）</p>
+          </div>
+        </div>
+
+        <h3 v-if="overview.follow_ups && overview.follow_ups.length">顾问待办（跟进提醒）</h3>
+        <table v-if="overview.follow_ups && overview.follow_ups.length">
+          <thead><tr><th>类型</th><th>学员</th><th>详情</th><th></th></tr></thead>
+          <tbody>
+            <tr v-for="(f, i) in overview.follow_ups" :key="i" :class="{err: f.urgent}">
+              <td><span class="tag" :class="f.urgent ? 'warning' : 'ok'">{{ f.kind }}</span></td>
+              <td>{{ f.student_name }}（{{ f.student_no }}）</td>
+              <td>{{ f.detail }}</td>
+              <td><button class="btn btn-sm" @click="goFollowUp(f)">去处理</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 v-if="overview.expiring_documents && overview.expiring_documents.length">学员材料到期预警（行政链）</h3>
+        <table v-if="overview.expiring_documents && overview.expiring_documents.length">
+          <thead><tr><th>学员</th><th>材料</th><th>编号</th><th>到期日</th><th>状态</th><th></th></tr></thead>
+          <tbody>
+            <tr v-for="(d, i) in overview.expiring_documents" :key="i">
+              <td>{{ d.student_name }}（{{ d.student_no }}）</td>
+              <td><span class="tag">{{ d.doc_type }}</span></td>
+              <td class="mono">{{ dash(d.doc_no) }}</td>
+              <td>{{ d.expiry_date }}</td>
+              <td><span class="tag" :class="d.level">{{ d.hint }}</span></td>
+              <td><button class="btn btn-sm" @click="goFollowUp({student_no: d.student_no})">去处理</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>预警与提示</h3>
+        <table v-if="overview.warnings.length">
+          <thead><tr><th>级别</th><th>代码</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr v-for="w in overview.warnings" :key="w.code + w.message">
+              <td><span class="tag" :class="w.level">{{ w.level==='error'?'错误':'提示' }}</span></td>
+              <td>{{ w.code }}</td><td>{{ w.message }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p v-else class="ok">当前无预警</p>
+        <h3>备案人员</h3>
+        <table>
+          <thead><tr><th>姓名</th><th>角色</th><th>无犯罪声明</th><th>人员备案状态</th><th>到期日</th></tr></thead>
+          <tbody>
+            <tr v-for="s in overview.staff" :key="s.id">
+              <td>{{ s.name }}</td><td>{{ s.role }}</td>
+              <td>{{ s.no_crime_declaration ? '有' : '无' }}</td>
+              <td>{{ dash(s.filing_status) }}</td><td>{{ dash(s.expiry_date) }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </template>
+      <p v-else>加载中…</p>
+    </section>
+
+    <!-- ========== 学员：列表 ========== -->
+    <section v-if="page==='students' && !studentNo">
+      <div class="page-head">
+        <h2>学员管理</h2>
+        <button class="btn btn-primary" @click="openForm('student')">＋ 新增学员</button>
+      </div>
+      <div class="toolbar">
+        <input class="search" v-model="stuKeyword" placeholder="按姓名或学员号搜索" @keyup.enter="loadStudentList(1)">
+        <button class="btn" @click="loadStudentList(1)">搜索</button>
+        <span class="muted" v-if="studentPage">共 {{ studentPage.total }} 名学员</span>
+      </div>
+      <table v-if="studentPage">
+        <thead><tr><th>学员号</th><th>姓名</th><th>阶段</th><th>在跟项目</th><th>最近沟通</th><th>未成年人</th><th>监护人</th><th>操作</th></tr></thead>
+        <tbody>
+          <tr v-for="s in studentPage.items" :key="s.student_no">
+            <td class="nowrap">{{ s.student_no }}</td><td>{{ s.name }}</td>
+            <td><span class="tag" :class="stageClass(s.stage)">{{ dash(s.stage) }}</span></td>
+            <td class="muted">{{ dash(s.active_program) }}</td>
+            <td class="nowrap">{{ fmtTime(s.last_communication_at) }}</td>
+            <td>{{ isMinorByBirth(s.birth_date) ? '是' : '否' }}</td>
+            <td>{{ dash(s.guardian_name) }}</td>
+            <td><button class="btn btn-sm btn-primary" @click="openStudent(s.student_no)">详情</button></td>
+          </tr>
+          <tr v-if="!studentPage.items.length"><td colspan="8">-</td></tr>
+        </tbody>
+      </table>
+      <div class="pager" v-if="studentPage">
+        <button class="btn btn-sm" :disabled="studentPage.page<=1" @click="loadStudentList(studentPage.page-1)">上一页</button>
+        <span class="muted">第 {{ studentPage.page }} 页</span>
+        <button class="btn btn-sm" :disabled="studentPage.page*studentPage.size>=studentPage.total" @click="loadStudentList(studentPage.page+1)">下一页</button>
+      </div>
+    </section>
+
+    <!-- ========== 学员：详情 ========== -->
+    <section v-if="page==='students' && studentNo && records">
+      <button class="btn btn-sm" @click="closeStudent">← 返回学员列表</button>
+      <h2 class="detail-head">{{ records.student.name }}
+        <span class="muted">{{ records.student.student_no }}</span>
+        <span class="tag" :class="stageClass(records.student.stage)">{{ dash(records.student.stage) }}</span>
+        <span class="tag" :class="records.is_minor ? 'warning' : 'ok'">{{ records.is_minor ? '未成年' : '成年' }}</span>
+        <button class="btn btn-sm" v-if="studentStageNext().length" @click="openStageForm('student')">推进阶段</button>
+      </h2>
+      <p class="muted">审计溯源 {{ records.audit_count }} 条 ｜ 监护人：{{ dash(records.student.guardian_name) }}（{{ dash(records.student.guardian_phone) }}）</p>
+
+      <nav class="subnav">
+        <button v-for="t in detailTabs" :key="t.key" class="nav-btn" :class="{active: detailTab===t.key}" @click="switchDetailTab(t.key)">{{ t.label }}</button>
+      </nav>
+
+      <!-- 概要 -->
+      <div v-if="detailTab==='summary'">
+        <table class="kv">
+          <tbody>
+            <tr><th>学员号</th><td>{{ records.student.student_no }}</td></tr>
+            <tr><th>姓名</th><td>{{ records.student.name }}</td></tr>
+            <tr><th>出生日期</th><td>{{ dash(records.student.birth_date) }}</td></tr>
+            <tr><th>生命周期阶段</th><td>{{ dash(records.student.stage) }}</td></tr>
+            <tr><th>监护人</th><td>{{ dash(records.student.guardian_name) }}（{{ dash(records.student.guardian_phone) }}）</td></tr>
+            <tr><th>备注</th><td>{{ dash(records.student.notes) }}</td></tr>
+          </tbody>
+        </table>
+        <h3>全流程轨迹（服务节点，含阶段变更）</h3>
+        <ol class="timeline">
+          <li v-for="e in records.service_events" :key="e.id">
+            <b>{{ e.event_type }}</b> {{ dash(e.occurred_at) }} · {{ e.operator }}<br>
+            <span class="muted">{{ dash(e.remark) }}</span>
+          </li>
+          <li v-if="!records.service_events.length">-</li>
+        </ol>
+      </div>
+
+      <!-- 报名与推进 -->
+      <div v-if="detailTab==='enrollments'">
+        <div class="tab-actions"><button class="btn btn-primary" @click="openEnrollmentCreate">＋ 新增报名</button></div>
+        <table>
+          <thead><tr><th>项目</th><th>课程/房型</th><th>接机</th><th>预计入学</th><th>菲律宾行政链</th><th>阶段</th><th>操作</th></tr></thead>
+          <tbody>
+            <tr v-for="e in records.enrollments" :key="e.id">
+              <td>{{ e.program_name }}（{{ e.program_type }}）<br>
+                <span v-if="e.weeks" class="muted">{{ e.weeks }}周 · {{ dash(e.room_type) }}</span></td>
+              <td>{{ dash(e.course_name) }}<br><span class="muted">{{ dash(e.accommodation) }}</span></td>
+              <td>{{ e.pickup_arranged ? '已安排' : '未安排' }}</td><td>{{ dash(e.expected_start) }}</td>
+              <td>
+                <template v-if="e.program_type==='语言研修' && e.school_country==='菲律宾'">
+                  <span class="tag" :class="hasDocType('SSP') ? 'ok' : 'warning'">SSP{{ hasDocType('SSP') ? '✓' : '待办' }}</span>
+                  <span v-if="e.weeks * 7 > 59" class="tag" :class="hasDocType('ACR I-Card') ? 'ok' : 'warning'">ACR{{ hasDocType('ACR I-Card') ? '✓' : '待办' }}</span>
+                  <span v-if="isMinorByBirth(records.student.birth_date)" class="tag" :class="hasWegProof() ? 'ok' : 'warning'">WEG{{ hasWegProof() ? '✓' : '待办' }}</span>
+                </template>
+                <span v-else class="muted">—</span>
+              </td>
+              <td><span class="tag" :class="stageClass(e.stage)">{{ dash(e.stage) }}</span></td>
+              <td><button class="btn btn-sm" @click="openStageForm('enrollment', e)">推进</button></td>
+            </tr>
+            <tr v-if="!records.enrollments.length"><td colspan="7">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 报价单 -->
+      <div v-if="detailTab==='quotations'">
+        <div class="tab-actions"><button class="btn btn-primary" @click="openQuoteCreate">＋ 新建报价单</button></div>
+        <table v-if="records.quotations && records.quotations.length">
+          <thead><tr><th>编号</th><th>学校/课程</th><th>方案</th><th>入学日期</th><th>明细</th><th>总额</th><th>状态</th><th>操作</th></tr></thead>
+          <tbody>
+            <tr v-for="q in records.quotations" :key="q.id">
+              <td>{{ q.quote_no }}</td>
+              <td>{{ q.school_name }}<br><span class="muted">{{ q.course_name }}</span></td>
+              <td>{{ q.weeks }}周 · {{ q.room_type }}</td>
+              <td>{{ dash(q.start_date) }}</td>
+              <td>
+                <ul class="inline">
+                  <li v-for="i in q.items" :key="i.name" :class="{muted: i.internal}">{{ i.name }}：{{ i.amount }}</li>
+                </ul>
+              </td>
+              <td><b>${{ q.total_usd }}</b></td>
+              <td><span class="tag" :class="q.status==='已确认' ? 'ok' : (q.status==='已作废' ? 'error' : 'warning')">{{ q.status }}</span></td>
+              <td>
+                <button v-if="q.status==='草稿'" class="btn btn-sm" @click="sendQuote(q)">发送</button>
+                <button v-if="q.status!=='已确认' && q.status!=='已作废'" class="btn btn-sm btn-primary" @click="askConfirmQuote(q)">确认转报名</button>
+                <button v-if="q.status!=='已确认' && q.status!=='已作废'" class="btn btn-sm" @click="voidQuote(q)">作废</button>
+                <span v-else class="muted">—</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p v-else class="muted">暂无报价单。真实流程：免费测试 → 出方案报价（可多轮比价）→ 确认后自动生成语言研修报名。</p>
+      </div>
+
+      <!-- 在读周报 -->
+      <div v-if="detailTab==='reports'">
+        <div class="tab-actions"><button class="btn btn-primary" @click="openReportCreate">＋ 录入周报/分班测试</button></div>
+        <div v-for="e in records.enrollments" :key="'r'+e.id">
+          <h3 class="muted">{{ e.program_name }}</h3>
+          <table v-if="e.weekly_reports.length">
+            <thead><tr><th>周次</th><th>等级</th><th>测试分</th><th>出勤</th><th>教师评语</th><th>家长反馈</th></tr></thead>
+            <tbody>
+              <tr v-for="r in e.weekly_reports" :key="r.id">
+                <td><span class="tag">{{ r.week_no === 0 ? '分班测试' : '第'+r.week_no+'周' }}</span></td>
+                <td>{{ dash(r.level) }}</td><td>{{ dash(r.test_score) }}</td>
+                <td>{{ r.attendance_pct === null || r.attendance_pct === undefined ? '-' : r.attendance_pct + '%' }}</td>
+                <td>{{ dash(r.teacher_comment) }}</td>
+                <td>{{ dash(r.parent_notified_at) }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p v-else class="muted">暂无周报（入学后第 0 周为分班测试）。</p>
+        </div>
+        <p v-if="!records.enrollments.length" class="muted">尚无报名记录。</p>
+      </div>
+
+      <!-- 证件材料 -->
+      <div v-if="detailTab==='documents'">
+        <div class="tab-actions"><button class="btn btn-primary" @click="openForm('document')">＋ 登记材料</button></div>
+        <table>
+          <thead><tr><th>类型</th><th>编号/航班/学校</th><th>签发日</th><th>到期日</th><th>附件</th></tr></thead>
+          <tbody>
+            <tr v-for="d in records.documents" :key="d.id">
+              <td><span class="tag" :class="d.doc_type==='护照' && isPassportShort(d) ? 'error' : 'ok'">{{ d.doc_type }}</span></td>
+              <td>{{ dash(d.doc_no) }}</td><td>{{ dash(d.issued_date) }}</td><td>{{ dash(d.expiry_date) }}</td>
+              <td>
+                <a v-if="d.attachment_id" class="link" :href="'/api/attachments/' + d.attachment_id + '/download'" target="_blank">
+                  📎 {{ dash(d.attachment_filename) }}
+                </a>
+                <span v-else>{{ dash(d.file_ref) }}</span>
+              </td>
+            </tr>
+            <tr v-if="!records.documents.length"><td colspan="5">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 沟通记录 -->
+      <div v-if="detailTab==='communications'">
+        <div class="tab-actions"><button class="btn btn-primary" @click="openForm('communication')">＋ 记录沟通</button></div>
+        <table>
+          <thead><tr><th>时间</th><th>渠道</th><th>方向</th><th>经办人</th><th>摘要</th></tr></thead>
+          <tbody>
+            <tr v-for="m in records.communications" :key="m.id">
+              <td>{{ dash(m.occurred_at) }}</td><td>{{ m.channel }}</td>
+              <td>{{ m.direction === '呼出' ? '→ 呼出' : '← 呼入' }}</td>
+              <td>{{ m.operator }}</td><td>{{ m.summary }}</td>
+            </tr>
+            <tr v-if="!records.communications.length"><td colspan="5">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 同意书 -->
+      <div v-if="detailTab==='consents'">
+        <div class="tab-actions"><button class="btn btn-primary" @click="openConsentCreate">＋ 签署同意书</button></div>
+        <table>
+          <thead><tr><th>类型</th><th>单独同意</th><th>签署人</th><th>关系</th><th>签署时间</th><th>状态</th><th>操作</th></tr></thead>
+          <tbody>
+            <tr v-for="c in records.consents" :key="c.id">
+              <td>{{ c.consent_type }}</td><td>{{ c.individual_consent ? '是' : '否' }}</td>
+              <td>{{ c.signer_name }}</td><td>{{ dash(c.relation) }}</td><td>{{ dash(c.signed_at) }}</td>
+              <td><span class="tag" :class="c.status==='有效' ? 'ok' : 'warning'">{{ c.status }}</span></td>
+              <td><button v-if="c.status==='有效'" class="btn btn-sm btn-danger" @click="askRevokeConsent(c)">撤回</button><span v-else>-</span></td>
+            </tr>
+            <tr v-if="!records.consents.length"><td colspan="7">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 合同缴费 -->
+      <div v-if="detailTab==='contracts'">
+        <div class="tab-actions">
+          <button class="btn btn-primary" @click="openContractCreate(records.student)">＋ 新增合同</button>
+          <button class="btn" @click="openPaymentCreate()">＋ 登记缴费</button>
+        </div>
+        <table>
+          <thead><tr><th>合同号</th><th>服务范围</th><th>总额</th><th>签约日</th><th>状态</th><th>缴费记录</th><th>对账（折CNY）</th></tr></thead>
+          <tbody>
+            <tr v-for="c in records.contracts" :key="c.id">
+              <td>{{ c.contract_no }}</td>
+              <td><span class="chip" v-for="s in c.service_scope || []" :key="s">{{ s }}</span></td>
+              <td>{{ currencyMark(c.currency) }}{{ c.total_fee }}</td><td>{{ dash(c.signed_date) }}</td><td>{{ c.status }}</td>
+              <td><ul class="inline"><li v-for="p in c.payments" :key="p.id">
+                {{ p.type }} {{ currencyMark(p.currency) }}{{ p.amount }}（{{ p.payee }}，凭证 {{ p.voucher_no }}）</li>
+                <li v-if="!c.payments.length">-</li></ul></td>
+              <td v-if="c.settlement">
+                <span :class="c.settlement.cleared ? 'ok' : 'err'">
+                  {{ c.settlement.cleared ? '✓ 已缴清' : '欠款 ¥' + c.settlement.balance_cny }}
+                </span><br>
+                <span class="muted">应收¥{{ c.settlement.receivable_cny }}｜已缴¥{{ c.settlement.paid_cny }}<br>当地费到校另付≈¥{{ c.settlement.local_fee_cny }}</span>
+              </td>
+              <td v-else>-</td>
+            </tr>
+            <tr v-if="!records.contracts.length"><td colspan="7">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 服务时间线 -->
+      <div v-if="detailTab==='timeline'">
+        <ol class="timeline">
+          <li v-for="e in records.service_events" :key="e.id">
+            <b>{{ e.event_type }}</b> {{ dash(e.occurred_at) }} · 经办人 {{ e.operator }} {{ dash(e.remark) }}
+          </li>
+          <li v-if="!records.service_events.length">-</li>
+        </ol>
+      </div>
+
+      <!-- 访问记录 -->
+      <div v-if="detailTab==='access'">
+        <p class="muted">谁在什么时间查看过该学员信息 / 下载过该学员附件（内部记录，不进审计链）</p>
+        <table>
+          <thead><tr><th>时间</th><th>操作人</th><th>行为</th><th>对象</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr v-for="l in accessLogs" :key="l.id">
+              <td>{{ dash(l.created_at) }}</td><td>{{ l.actor }}</td>
+              <td>{{ accessLabel(l.access_type) }}</td><td>{{ l.target }}</td>
+              <td class="mono">{{ l.detail }}</td>
+            </tr>
+            <tr v-if="!accessLogs.length"><td colspan="5">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========== 学校与课程 ========== -->
+    <section v-if="page==='schools'">
+      <div class="page-head">
+        <h2>合作学校与课程价目</h2>
+        <div>
+          <button class="btn btn-primary" @click="openForm('school')">＋ 新增学校</button>
+          <button class="btn" @click="openCourseCreate()">＋ 新增课程</button>
+        </div>
+      </div>
+      <p class="muted">841号令备案要件：从事出境中介须与境外服务机构有合作协议（每校须登记并核验）。价格为演示虚构值，按周计费、含食宿、按房型差价。</p>
+      <div class="cards" v-if="schoolStore.length">
+        <div class="card" v-for="s in schoolStore" :key="s.id">
+          <h3>{{ s.name }}</h3>
+          <p>
+            <span class="tag">{{ s.region }}</span>
+            <span class="tag">{{ s.style }}</span>
+            <span class="tag" :class="s.verified ? 'ok' : 'warning'">{{ s.verified ? '资质已核验' : '未核验' }}</span>
+          </p>
+          <p>注册费 ${{ s.registration_fee_usd }}（不退） ｜ 返佣 {{ s.commission_rate }}%（内部）</p>
+          <p class="muted">合作协议：{{ dash(s.cooperation_agreement) }}</p>
+          <p class="muted">{{ dash(s.notes) }}</p>
+        </div>
+      </div>
+
+      <h3>课程价目表（USD/周，含食宿）</h3>
+      <table v-if="courseStore.length">
+        <thead><tr><th>学校</th><th>课程</th><th>类型</th><th>课时结构</th><th>最短周数</th><th>房型价格</th><th>保分条款</th></tr></thead>
+        <tbody>
+          <tr v-for="c in courseStore" :key="c.id">
+            <td>{{ schoolName(c.school_id) }}</td>
+            <td>{{ c.name }}</td><td>{{ c.course_type }}</td>
+            <td>{{ dash(c.lessons) }}</td>
+            <td>{{ c.min_weeks }} 周</td>
+            <td>
+              <span class="chip" v-for="(price, room) in c.room_prices" :key="room">{{ room }} ${{ price }}/周</span>
+            </td>
+            <td class="muted">{{ dash(c.guarantee || c.notes) }}</td>
+          </tr>
+          <tr v-if="!courseStore.length"><td colspan="7">-</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 活动与行程 ========== -->
+    <section v-if="page==='programs'">
+      <div class="page-head">
+        <h2>活动与行程备案</h2>
+        <button class="btn btn-primary" @click="openForm('program')">＋ 新建活动</button>
+      </div>
+      <table>
+        <thead><tr><th>项目</th><th>类型</th><th>出发/返回</th><th>行前备案</th><th>境外学校（核验）</th><th>师生配置</th><th>保险</th><th>应急预案</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr v-for="p in programs" :key="p.id">
+            <td>{{ p.name }}</td><td>{{ p.type }}</td>
+            <td>{{ dash(p.departure_date) }} ~ {{ dash(p.return_date) }}</td>
+            <td v-if="p.type==='语言研修'">—（个人研修）</td>
+            <td v-else>{{ dash(p.filing_status) }}（{{ dash(p.filing_date) }}）</td>
+            <td v-if="p.type==='语言研修'">{{ schoolName(p.school_id) }} · {{ p.weeks }}周 · {{ p.room_type }} <span class="tag" :class="p.course_id ? 'ok' : 'warning'">{{ p.course_id ? '课程已关联' : '未关联课程' }}</span></td>
+            <td v-else-if="p.partner_school">{{ p.partner_school + (p.school_verified ? '（已核验）' : '（未核验）') }}</td>
+            <td v-else>-</td>
+            <td v-if="p.type==='语言研修'">—</td>
+            <td v-else>师{{ p.teacher_count }}/生{{ p.student_count }}</td>
+            <td>{{ p.insurance ? p.insurance.policy_no : '-' }}</td>
+            <td v-if="p.type==='语言研修'">—</td>
+            <td v-else>{{ p.emergency_plan ? '有' : '无' }}</td>
+            <td>{{ p.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 合同与缴费 ========== -->
+    <section v-if="page==='finance'">
+      <div class="page-head">
+        <h2>合同管理</h2>
+        <div>
+          <button class="btn btn-primary" @click="openContractCreate(null)">＋ 新增合同</button>
+          <button class="btn" @click="openPaymentCreate()">＋ 登记缴费</button>
+        </div>
+      </div>
+      <nav class="subnav">
+        <button class="nav-btn" :class="{active: finTab==='contracts'}" @click="finTab='contracts'">合同列表</button>
+        <button class="nav-btn" :class="{active: finTab==='payments'}" @click="finTab='payments'">缴费记录</button>
+      </nav>
+
+      <table v-if="finTab==='contracts'">
+        <thead><tr><th>合同号</th><th>学员</th><th>服务范围</th><th>总额</th><th>签约日</th><th>状态</th><th>对账（折CNY）</th><th>退费试算</th></tr></thead>
+        <tbody>
+          <tr v-for="c in contracts" :key="c.id">
+            <td>{{ c.contract_no }}</td>
+            <td>{{ studentName(c.student_id) }}</td>
+            <td><span class="chip" v-for="s in c.service_scope || []" :key="s">{{ s }}</span></td>
+            <td>{{ currencyMark(c.currency) }}{{ c.total_fee }}</td><td>{{ dash(c.signed_date) }}</td><td>{{ c.status }}</td>
+            <td v-if="c.settlement">
+              <span :class="c.settlement.cleared ? 'ok' : 'err'">
+                {{ c.settlement.cleared ? '✓ 已缴清' : '欠款 ¥' + c.settlement.balance_cny }}
+              </span><br>
+              <span class="muted">应收¥{{ c.settlement.receivable_cny }}｜已缴¥{{ c.settlement.paid_cny }}</span>
+            </td>
+            <td v-else>-</td>
+            <td>
+              <select v-model="refundStage[c.id]">
+                <option v-for="r in c.refund_rules || []" :key="r.stage" :value="r.stage">{{ r.stage }}（{{ r.ratio }}%）</option>
+              </select>
+              <button v-if="refundStage[c.id]" class="btn btn-sm" @click="quoteRefund(c.id, refundStage[c.id])">试算</button>
+              <span v-if="refundResult[c.id] !== undefined" class="ok">应退 {{ refundResult[c.id] }}</span>
+            </td>
+          </tr>
+          <tr v-if="!contracts.length"><td colspan="8">-</td></tr>
+        </tbody>
+      </table>
+
+      <table v-if="finTab==='payments'">
+        <thead><tr><th>凭证号</th><th>合同号</th><th>类型</th><th>金额</th><th>折CNY</th><th>收款方</th><th>收费方证明</th></tr></thead>
+        <tbody>
+          <tr v-for="p in payments" :key="p.id">
+            <td>{{ p.voucher_no }}</td><td>{{ contractNo(p.contract_id) }}</td><td>{{ p.type }}</td>
+            <td>{{ currencyMark(p.currency) }}{{ p.amount }}</td>
+            <td class="muted">¥{{ fxToCny(p.amount, p.currency) }}</td>
+            <td>{{ p.payee }}</td><td>{{ dash(p.proof_file) }}</td>
+          </tr>
+          <tr v-if="!payments.length"><td colspan="7">-</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========== 审计与访问 ========== -->
+    <section v-if="page==='audit'">
+      <h2>审计与访问记录</h2>
+      <nav class="subnav">
+        <button class="nav-btn" :class="{active: auditTab==='audit'}" @click="loadAuditTab('audit')">审计日志（哈希链）</button>
+        <button class="nav-btn" :class="{active: auditTab==='access'}" @click="loadAuditTab('access')">访问记录（内部）</button>
+      </nav>
+
+      <template v-if="auditTab==='audit'">
+        <p>
+          <button class="btn btn-primary" @click="verifyAudit">校验链完整性</button>
+          <span v-if="verifyResult" :class="verifyResult.valid ? 'ok' : 'err'">
+            {{ verifyResult.valid ? '✓ 全链完整' : '✗ 链已破坏' }}（校验 {{ verifyResult.checked }} 条）
+          </span>
+          <span class="muted">点击任意行，右侧抽屉查看完整详情</span>
+        </p>
+        <table>
+          <thead><tr><th>#</th><th>时间</th><th>操作人</th><th>动作</th><th>对象</th><th>对象ID</th><th>内容摘要</th><th>哈希</th></tr></thead>
+          <tbody>
+            <tr v-for="l in auditLogs" :key="l.id" class="clickable" @click="drawerLog=l">
+              <td>{{ l.id }}</td><td>{{ dash(l.created_at) }}</td><td>{{ l.actor }}</td>
+              <td>{{ actionLabel(l) }}</td><td>{{ entityLabel(l.entity) }}</td><td>{{ l.entity_id }}</td>
+              <td class="mono">{{ brief(l) }}</td>
+              <td class="mono">{{ l.hash.slice(0, 12) }}…</td>
+            </tr>
+          </tbody>
+        </table>
+      </template>
+
+      <template v-if="auditTab==='access'">
+        <p class="muted">查看学员信息、下载附件等敏感读取行为的内部记录（数据泄露追溯用，不进审计哈希链）。</p>
+        <table>
+          <thead><tr><th>#</th><th>时间</th><th>操作人</th><th>行为</th><th>对象</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr v-for="l in accessLogs" :key="l.id">
+              <td>{{ l.id }}</td><td>{{ dash(l.created_at) }}</td><td>{{ l.actor }}</td>
+              <td>{{ accessLabel(l.access_type) }}</td><td>{{ l.target }}</td>
+              <td class="mono">{{ l.detail }}</td>
+            </tr>
+            <tr v-if="!accessLogs.length"><td colspan="6">-</td></tr>
+          </tbody>
+        </table>
+      </template>
+    </section>
+
+    <!-- ========== 机构信息 ========== -->
+    <section v-if="page==='agency'">
+      <h2>本机构信息（备案与资质档案）</h2>
+      <p class="muted">本系统为单机构内部应用，此页是本机构自身的备案与资质档案，低频维护。</p>
+      <template v-if="agency">
+        <table class="kv">
+          <tbody>
+            <tr><th>机构名称</th><td>{{ agency.name }}</td></tr>
+            <tr><th>统一社会信用代码</th><td>{{ agency.uscc }}</td></tr>
+            <tr><th>旅行社业务经营许可证号</th><td>{{ dash(agency.travel_license_no) }}</td></tr>
+            <tr><th>出境游业务许可</th><td>{{ agency.outbound_licensed ? '已持有' : '未持有' }}</td></tr>
+            <tr><th>证照有效期至</th><td>{{ dash(agency.license_expiry) }}</td></tr>
+            <tr><th>出入境中介备案状态（841号令）</th><td>{{ dash(agency.filing_status) }}</td></tr>
+            <tr><th>备案凭证号</th><td>{{ dash(agency.filing_no) }}</td></tr>
+            <tr><th>备案日期</th><td>{{ dash(agency.filing_date) }}</td></tr>
+            <tr><th>经营场所证明</th><td>{{ dash(agency.premise_proof) }}</td></tr>
+            <tr><th>制度文件（备案要件）</th><td>
+              <span class="chip" v-for="d in agency.policy_documents || []" :key="d">{{ d }}</span>
+              <span v-if="!agency.policy_documents || !agency.policy_documents.length">-</span>
+            </td></tr>
+          </tbody>
+        </table>
+      </template>
+      <p v-else>尚未建立机构档案</p>
+    </section>
+  </main>
+
+  <!-- 审计详情抽屉 -->
+  <div class="drawer-mask" v-if="drawerLog" @click="drawerLog=null"></div>
+  <aside class="drawer" v-if="drawerLog">
+    <div class="drawer-head">
+      <h3>审计详情 #{{ drawerLog.id }}</h3>
+      <button class="btn btn-sm" @click="drawerLog=null">关闭 ✕</button>
+    </div>
+    <p><b>动作：</b>{{ actionLabel(drawerLog) }}　<b>对象：</b>{{ entityLabel(drawerLog.entity) }} #{{ drawerLog.entity_id }}</p>
+    <p><b>操作人：</b>{{ drawerLog.actor }}　<b>时间：</b>{{ drawerLog.created_at }}</p>
+    <p><b>变更前 → 后：</b></p>
+    <pre class="mono">{{ diffText(drawerLog) }}</pre>
+    <p><b>完整载荷：</b></p>
+    <pre class="mono">{{ JSON.stringify(drawerLog.payload, null, 2) }}</pre>
+    <p class="mono">prev_hash = {{ drawerLog.prev_hash || '（链首）' }}<br>hash = {{ drawerLog.hash }}</p>
+  </aside>
+
+  <!-- 通用表单弹窗 -->
+  <div class="modal-mask" v-if="formModal.show">
+    <div class="modal wide">
+      <h3>{{ formModal.title }}</h3>
+
+      <!-- 新增学员 -->
+      <form v-if="formModal.kind==='student'" @submit.prevent="submitStudent">
+        <label>学员号 <input v-model="newStudent.student_no" required placeholder="STU-2027-100"></label>
+        <label>姓名 <input v-model="newStudent.name" required placeholder="学员某某（虚构）"></label>
+        <label>出生日期 <input v-model="newStudent.birth_date" type="date" required></label>
+        <label>监护人姓名 <input v-model="newStudent.guardian_name"></label>
+        <label>监护人电话 <input v-model="newStudent.guardian_phone"></label>
+        <p class="muted">建档后学员处于「意向」阶段：记录沟通 → 推进阶段 → 报名，全程留痕。</p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">确认建档</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 新建活动/项目 -->
+      <form v-if="formModal.kind==='program'" @submit.prevent="submitProgram">
+        <div class="row">
+          <label>名称 <input v-model="newProgram.name" required></label>
+          <label>类型
+            <select v-model="newProgram.type"><option>境内研学</option><option>出境游学</option><option>语言研修</option><option>留学服务</option></select>
+          </label>
+        </div>
+        <div class="row" v-if="newProgram.type!=='语言研修'">
+          <label>出发日期 <input v-model="newProgram.departure_date" type="date" required></label>
+          <label>返回日期 <input v-model="newProgram.return_date" type="date" required></label>
+          <label>备案日期 <input v-model="newProgram.filing_date" type="date"></label>
+          <label>备案状态
+            <select v-model="newProgram.filing_status"><option>已备案</option><option>未备案</option></select>
+          </label>
+          <label>带队老师数 <input v-model.number="newProgram.teacher_count" type="number" min="0"></label>
+          <label>学员数 <input v-model.number="newProgram.student_count" type="number" min="0"></label>
+        </div>
+        <div class="row" v-if="newProgram.type==='出境游学'">
+          <label>境外合作学校/机构 <input v-model="newProgram.partner_school" placeholder="出境游学必填"></label>
+          <label class="check"><input type="checkbox" v-model="newProgram.school_verified"> 资质已核验（对照涉外监管网）</label>
+        </div>
+        <div class="row" v-if="newProgram.type==='语言研修'">
+          <label>学校
+            <select v-model="newProgram.school_id" required @change="onProgramSchoolChange">
+              <option :value="null">请选择</option>
+              <option v-for="s in schoolStore" :key="s.id" :value="s.id">{{ s.name }}（{{ s.region }}·{{ s.style }}）</option>
+            </select>
+          </label>
+          <label>课程
+            <select v-model="newProgram.course_id" required @change="onProgramCourseChange">
+              <option :value="null">请选择</option>
+              <option v-for="c in coursesOfSchool(newProgram.school_id)" :key="c.id" :value="c.id">{{ c.name }}（最短{{ c.min_weeks }}周）</option>
+            </select>
+          </label>
+          <label>周数 <input v-model.number="newProgram.weeks" type="number" min="1" required></label>
+          <label>房型
+            <select v-model="newProgram.room_type" required>
+              <option v-for="(_, room) in roomsOfCourse(newProgram.course_id)" :key="room" :value="room">{{ room }}</option>
+            </select>
+          </label>
+          <label>入学日期（周日） <input v-model="newProgram.departure_date" type="date" required @change="onProgramStartChange"></label>
+          <label>离校日期（自动）<input :value="calcReturnDate()" type="text" readonly></label>
+        </div>
+        <p class="muted" v-if="newProgram.type==='语言研修'">个人研修计划：不要求行前备案/师生比（非研学团）；报名时同样校验护照6个月与未成年同意。</p>
+        <p class="muted" v-else>提交后后端实时合规校验（行前备案30日、出境资质、师生比、保险等）。</p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">创建项目</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 新增报名（团体营 / 语言研修双模式） -->
+      <form v-if="formModal.kind==='enrollment'" @submit.prevent="submitEnrollment">
+        <label>报名方式
+          <select v-model="newEnrollment.mode">
+            <option value="group">团体营/研学活动（选已有项目）</option>
+            <option value="language">个人语言研修（选学校课程，自动建研修计划）</option>
+          </select>
+        </label>
+        <template v-if="newEnrollment.mode==='group'">
+          <label>项目
+            <select v-model="newEnrollment.program_id" required>
+              <option v-for="p in programs.filter(x => x.type!=='语言研修')" :key="p.id" :value="p.id">{{ p.name }}（{{ p.type }}）</option>
+            </select>
+          </label>
+          <label>课程 <input v-model="newEnrollment.course_name" placeholder="如：Junior Camp 寒假营"></label>
+          <label>住宿安排 <input v-model="newEnrollment.accommodation" placeholder="如：4人间（营地宿舍）"></label>
+          <label>预计入学日期 <input v-model="newEnrollment.expected_start" type="date"></label>
+        </template>
+        <template v-else>
+          <div class="row">
+            <label>学校
+              <select v-model="newEnrollment.school_id" required @change="onEnrSchoolChange">
+                <option :value="null">请选择</option>
+                <option v-for="s in schoolStore" :key="s.id" :value="s.id">{{ s.name }}（{{ s.region }}）</option>
+              </select>
+            </label>
+            <label>课程
+              <select v-model="newEnrollment.course_id" required @change="onEnrCourseChange">
+                <option :value="null">请选择</option>
+                <option v-for="c in coursesOfSchool(newEnrollment.school_id)" :key="c.id" :value="c.id">{{ c.name }}（最短{{ c.min_weeks }}周）</option>
+              </select>
+            </label>
+            <label>周数 <input v-model.number="newEnrollment.weeks" type="number" min="1" required></label>
+            <label>房型
+              <select v-model="newEnrollment.room_type" required>
+                <option v-for="(_, room) in roomsOfCourse(newEnrollment.course_id)" :key="room" :value="room">{{ room }}</option>
+              </select>
+            </label>
+            <label>入学日期（周日） <input v-model="newEnrollment.start_date" type="date" required></label>
+          </div>
+          <p class="muted">提交后自动生成「语言研修」个人计划（离校日=入学+周数×7-1），报名即进入「已报名」阶段。个人研修建议先走「报价单」流程。</p>
+        </template>
+        <label class="check"><input type="checkbox" v-model="newEnrollment.pickup_arranged"> 已安排接机（菲律宾当地费含接机）</label>
+        <label class="check"><input type="checkbox" v-model="newEnrollment.health_proof"> 已收健康证明</label>
+        <label class="check"><input type="checkbox" v-model="newEnrollment.parent_notice_signed"> 家长告知书已签</label>
+        <p class="muted">后端校验：未成年人监护人单独同意（PIPL）、护照有效期≥离校后6个月（出境）、未满15岁出境须 WEG/监护同行证明。</p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">提交报名</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 登记材料 -->
+      <form v-if="formModal.kind==='document'" @submit.prevent="submitDocument">
+        <label>类型
+          <select v-model="newDocument.doc_type">
+            <option>护照</option><option>签证</option><option>机票</option><option>录取通知书</option>
+            <option>SSP</option><option>ACR I-Card</option><option>WEG</option><option>监护同行证明</option>
+            <option>保险单</option><option>接机确认单</option><option>住宿确认单</option>
+            <option>报名表</option><option>健康证明</option><option>其他</option>
+          </select>
+        </label>
+        <label>编号/航班/学校 <input v-model="newDocument.doc_no"></label>
+        <label>签发日 <input v-model="newDocument.issued_date" type="date"></label>
+        <label>到期日 <input v-model="newDocument.expiry_date" type="date"></label>
+        <label>备注 <input v-model="newDocument.remark" placeholder="如：学校代办/领队统一办理"></label>
+        <label>附件上传 <input type="file" @change="onFilePick"></label>
+        <p v-if="pickedFile" class="muted">已选择：{{ pickedFile.name }}（{{ Math.ceil(pickedFile.size/1024) }}KB）</p>
+        <p class="muted">菲律宾链条：SSP 读1周也要办；课程>59天（9周+）还须 ACR I-Card；未满15岁须 WEG 或监护同行证明——登记后才可推进「在读」/报名。</p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">登记</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 记录沟通 -->
+      <form v-if="formModal.kind==='communication'" @submit.prevent="submitCommunication">
+        <label>渠道
+          <select v-model="newCommunication.channel">
+            <option>电话</option><option>微信</option><option>邮件</option><option>面谈</option><option>其他</option>
+          </select>
+        </label>
+        <label>方向
+          <select v-model="newCommunication.direction"><option>呼出</option><option>呼入</option></select>
+        </label>
+        <label>时间 <input v-model="newCommunication.occurred_at" type="datetime-local" required></label>
+        <label>经办人 <input v-model="newCommunication.operator" required></label>
+        <label>摘要 <textarea v-model="newCommunication.summary" rows="2" required></textarea></label>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">记录</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 签署同意书 -->
+      <form v-if="formModal.kind==='consent'" @submit.prevent="submitConsent">
+        <label>同意类型
+          <select v-model="newConsent.consent_type">
+            <option>敏感信息处理</option><option>信息出境</option><option>影像使用</option><option>基础服务</option>
+          </select>
+        </label>
+        <label>适用范围
+          <select v-model="consentScope">
+            <option :value="null">机构通用（不限项目，适合语言研修先签后报）</option>
+            <option v-for="p in programs" :key="p.id" :value="p.id">{{ p.name }}</option>
+          </select>
+        </label>
+        <label>签署人 <input v-model="newConsent.signer_name" required></label>
+        <label>关系 <input v-model="newConsent.relation" placeholder="母亲/父亲"></label>
+        <label class="check"><input type="checkbox" v-model="newConsent.individual_consent"> 单独同意（PIPL 第29条）</label>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">签署</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 新增合同 -->
+      <form v-if="formModal.kind==='contract'" @submit.prevent="submitContract">
+        <label>学员
+          <select v-if="!formModal.fixedStudent" v-model="newContract.student_id" required>
+            <option v-for="s in allStudents" :key="s.id" :value="s.id">{{ s.name }}（{{ s.student_no }}）</option>
+          </select>
+          <b v-else>{{ formModal.fixedStudent.name }}（{{ formModal.fixedStudent.student_no }}）</b>
+        </label>
+        <label>合同号 <input v-model="newContract.contract_no" required placeholder="CT-2027-001"></label>
+        <label>服务范围（逗号分隔）<input v-model="contractScopeText" placeholder="选校咨询,代办报名,签证指导,行前服务"></label>
+        <label>总费用（研学营 CNY / 语言研修 USD）<input v-model="newContract.total_fee" required placeholder="3820"></label>
+        <label>币种
+          <select v-model="newContract.currency"><option>USD</option><option>CNY</option></select>
+        </label>
+        <label>签约日期 <input v-model="newContract.signed_date" type="date" required></label>
+        <label>退费规则预设
+          <select v-model="refundPreset">
+            <option value="ph">菲律宾学校梯度（开课前周数，注册费不退）</option>
+            <option value="gf">留学中介阶梯（GF-2016-1002）</option>
+          </select>
+        </label>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">创建合同</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 登记缴费 -->
+      <form v-if="formModal.kind==='payment'" @submit.prevent="submitPayment">
+        <label>关联合同
+          <select v-model="newPayment.contract_id" required>
+            <option v-for="c in contracts" :key="c.id" :value="c.id">
+              {{ c.contract_no }}（{{ studentName(c.student_id) }}，{{ c.total_fee }}）
+            </option>
+          </select>
+        </label>
+        <label>类型
+          <select v-model="newPayment.type">
+            <option>定金</option><option>服务费</option><option>代收代缴-学费</option>
+            <option>代收代缴-注册费</option><option>代收代缴-当地费</option>
+          </select>
+        </label>
+        <div class="row">
+          <label>金额 <input v-model="newPayment.amount" required></label>
+          <label>币种
+            <select v-model="newPayment.currency"><option>CNY</option><option>USD</option><option>PHP</option></select>
+          </label>
+        </div>
+        <label>凭证号 <input v-model="newPayment.voucher_no" required placeholder="INV-2027-001"></label>
+        <label>收款方 <input v-model="newPayment.payee" required placeholder="定金收机构，学费USD电汇学校，当地费PHP到校现付"></label>
+        <label>收费方证明（代收代缴必填）<input v-model="newPayment.proof_file" placeholder="学校INVOICE/电汇回单文件名"></label>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">登记缴费</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 新增学校 -->
+      <form v-if="formModal.kind==='school'" @submit.prevent="submitSchool">
+        <div class="row">
+          <label>名称 <input v-model="newSchool.name" required placeholder="如 SMEAG（公开信息）"></label>
+          <label>地区
+            <select v-model="newSchool.region"><option>宿务</option><option>碧瑶</option><option>克拉克</option><option>马尼拉</option><option>怡朗</option><option>其他</option></select>
+          </label>
+          <label>风格
+            <select v-model="newSchool.style"><option>斯巴达</option><option>半斯巴达</option><option>自律型</option><option>度假村型</option></select>
+          </label>
+        </div>
+        <div class="row">
+          <label>注册费 USD（一次性，不退）<input v-model="newSchool.registration_fee_usd" required></label>
+          <label>佣金率 %（内部）<input v-model="newSchool.commission_rate" required></label>
+        </div>
+        <label>合作协议（841号令备案要件）<input v-model="newSchool.cooperation_agreement" placeholder="合作协议文件名"></label>
+        <label class="check"><input type="checkbox" v-model="newSchool.verified"> 资质已核验</label>
+        <label>备注 <input v-model="newSchool.notes" placeholder="学校定位/特色"></label>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">创建学校</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 新增课程 -->
+      <form v-if="formModal.kind==='course'" @submit.prevent="submitCourse">
+        <label>学校
+          <select v-model="newCourse.school_id" required @change="onCourseFormSchoolChange">
+            <option v-for="s in schoolStore" :key="s.id" :value="s.id">{{ s.name }}</option>
+          </select>
+        </label>
+        <div class="row">
+          <label>课程名 <input v-model="newCourse.name" required placeholder="如 ESL 一般英文"></label>
+          <label>类型
+            <select v-model="newCourse.course_type"><option>ESL</option><option>密集ESL</option><option>IELTS保分</option><option>TOEIC保分</option><option>商务英语</option><option>亲子</option><option>冬夏令营</option><option>GAP</option></select>
+          </label>
+          <label>课时结构 <input v-model="newCourse.lessons" placeholder="如 1对1×4 + 团体×3"></label>
+          <label>最短周数 <input v-model.number="newCourse.min_weeks" type="number" min="1" required></label>
+        </div>
+        <div class="row">
+          <label>4人间 $/周 <input v-model.number="newCourse.r4" type="number" min="0"></label>
+          <label>3人间 $/周 <input v-model.number="newCourse.r3" type="number" min="0"></label>
+          <label>2人间 $/周 <input v-model.number="newCourse.r2" type="number" min="0"></label>
+          <label>1人间 $/周 <input v-model.number="newCourse.r1" type="number" min="0"></label>
+        </div>
+        <label>保分条款/备注 <input v-model="newCourse.guarantee" placeholder="如 未达5.5免费延长，出勤≥97%"></label>
+        <p class="muted">周价含食宿（菲律宾一价全包模式）；留空的房型不参与报价。</p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">创建课程</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 新建报价单 -->
+      <form v-if="formModal.kind==='quotation'" @submit.prevent="submitQuotation">
+        <div class="row">
+          <label>学校
+            <select v-model="newQuote.school_id" required @change="onQuoteSchoolChange">
+              <option :value="null">请选择</option>
+              <option v-for="s in schoolStore" :key="s.id" :value="s.id">{{ s.name }}（{{ s.region }}·{{ s.style }}）</option>
+            </select>
+          </label>
+          <label>课程
+            <select v-model="newQuote.course_id" required @change="onQuoteCourseChange">
+              <option :value="null">请选择</option>
+              <option v-for="c in coursesOfSchool(newQuote.school_id)" :key="c.id" :value="c.id">{{ c.name }}（最短{{ c.min_weeks }}周）</option>
+            </select>
+          </label>
+          <label>周数 <input v-model.number="newQuote.weeks" type="number" min="1" required @change="refreshQuotePreview"></label>
+          <label>房型
+            <select v-model="newQuote.room_type" required @change="refreshQuotePreview">
+              <option v-for="(_, room) in roomsOfCourse(newQuote.course_id)" :key="room" :value="room">{{ room }}</option>
+            </select>
+          </label>
+          <label>入学日期（周日） <input v-model="newQuote.start_date" type="date" required></label>
+        </div>
+        <div v-if="quotePreview" class="quote-preview">
+          <table>
+            <thead><tr><th>明细</th><th>金额</th></tr></thead>
+            <tbody>
+              <tr v-for="i in quotePreview.items" :key="i.name" :class="{muted: i.internal}">
+                <td>{{ i.name }}</td><td>{{ i.amount }}</td>
+              </tr>
+              <tr><td><b>合计（USD，当地费到校另付披索）</b></td><td><b>${{ quotePreview.total_usd }}</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">「学校返佣预估」为内部核算项，不出现在发给学员的报价中；确认转报名时若学员为未成年人且无监护人单独同意，将被拦截。</p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">保存报价单（草稿）</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 录入周报 -->
+      <form v-if="formModal.kind==='report'" @submit.prevent="submitReport">
+        <label>报名记录
+          <select v-model="newReport.enrollment_id" required>
+            <option v-for="e in records.enrollments" :key="e.id" :value="e.id">{{ e.program_name }}（{{ e.stage }}）</option>
+          </select>
+        </label>
+        <div class="row">
+          <label>周次 <input v-model.number="newReport.week_no" type="number" min="0" required placeholder="0=分班测试"></label>
+          <label>等级 <input v-model="newReport.level" placeholder="如 IELTS 4.0 / B1"></label>
+          <label>周测/模考分 <input v-model="newReport.test_score" placeholder="如 5.0"></label>
+          <label>出勤率 % <input v-model.number="newReport.attendance_pct" type="number" min="0" max="100" placeholder="保分班要求97+"></label>
+        </div>
+        <label>教师评语 <textarea v-model="newReport.teacher_comment" rows="2"></textarea></label>
+        <label>家长反馈时间 <input v-model="newReport.parent_notified_at" type="datetime-local"></label>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">录入周报</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+
+      <!-- 阶段推进 -->
+      <form v-if="formModal.kind==='stage'" @submit.prevent="submitStage">
+        <p>
+          <b>{{ stageCtx.kind==='student' ? '学员阶段' : '报名阶段' }}：</b>
+          <span class="tag">{{ stageCtx.current }}</span> →
+          <select v-model="stageCtx.target">
+            <option v-for="s in stageCtx.options" :key="s" :value="s">{{ s }}</option>
+          </select>
+        </p>
+        <label>备注 <input v-model="stageCtx.remark" placeholder="推进原因/依据（选填）"></label>
+        <p class="muted">推进写入服务节点（阶段变更）与审计日志。前置规则：「已入学」须已有缴费；「在读」（菲律宾语言研修）须已登记 SSP，课程>59天还须 ACR I-Card；「已流失/已终止」可任意阶段转入。</p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">确认推进</button>
+          <button type="button" class="btn" @click="closeForm">取消</button>
+        </div>
+        <p v-if="formModal.err" class="err">{{ formModal.err }}</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- 二次确认弹窗 -->
+  <div class="modal-mask" v-if="confirmBox.show">
+    <div class="modal">
+      <h3>操作确认</h3>
+      <p>{{ confirmBox.text }}</p>
+      <p class="muted">该操作将写入审计日志（追加写，不可修改/删除）。</p>
+      <div class="modal-actions">
+        <button class="btn btn-danger" @click="doConfirm">确认执行</button>
+        <button class="btn" @click="closeConfirm">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>依据：国务院令第841号 · 教基一〔2016〕8号 · PIPL · 网安法（2025修正）第23条 · 《未成年人网络保护条例》 · LB/T 054-2025 系列标准 ｜ 详见 research/ 调研报告</p>
+  </footer>
+</div>
+<script src="vue.global.prod.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

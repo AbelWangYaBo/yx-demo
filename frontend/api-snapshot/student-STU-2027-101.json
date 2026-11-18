@@ -1,0 +1,228 @@
+{
+ "student": {
+  "id": 1,
+  "student_no": "STU-2027-101",
+  "name": "学员小雨（虚构）",
+  "birth_date": "2012-08-20",
+  "stage": "已报名",
+  "guardian_name": "陈女士（虚构）",
+  "guardian_phone": "13800000101",
+  "guardian_id_masked": "3701**********0101",
+  "notes": "妈妈计划陪同赴菲上亲子课程（虚构）"
+ },
+ "is_minor": true,
+ "enrollments": [
+  {
+   "id": 2,
+   "program_id": 2,
+   "program_name": "QQ English·Family 亲子 ESL（8周·2人间）",
+   "program_type": "语言研修",
+   "school_name": "QQ English",
+   "school_country": "菲律宾",
+   "course_name": "Family 亲子 ESL",
+   "accommodation": "2人间",
+   "pickup_arranged": true,
+   "expected_start": "2027-01-10",
+   "weeks": 8,
+   "room_type": "2人间",
+   "stage": "材料准备",
+   "quotation_id": 2,
+   "health_proof": false,
+   "parent_notice_signed": false,
+   "created_at": "2026-11-18T14:36:34.280881",
+   "weekly_reports": []
+  }
+ ],
+ "quotations": [
+  {
+   "id": 2,
+   "quote_no": "QT-2026-002",
+   "school_id": 4,
+   "course_id": 6,
+   "school_name": "QQ English",
+   "course_name": "Family 亲子 ESL",
+   "weeks": 8,
+   "room_type": "2人间",
+   "start_date": "2027-01-10",
+   "items": [
+    {
+     "name": "学费+食宿（USD 260/周 × 8周 · 2人间）",
+     "amount": "2080",
+     "currency": "USD"
+    },
+    {
+     "name": "学校注册费（一次性，不退）",
+     "amount": "150",
+     "currency": "USD"
+    },
+    {
+     "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）",
+     "amount": "≈38,800 PHP",
+     "currency": "PHP"
+    },
+    {
+     "name": "学校返佣预估（15%，内部）",
+     "amount": "312",
+     "currency": "USD",
+     "internal": true
+    }
+   ],
+   "total_usd": "2230",
+   "status": "已确认",
+   "created_at": "2026-11-18T14:36:34.276852"
+  }
+ ],
+ "contracts": [
+  {
+   "id": 2,
+   "contract_no": "CT-2026-101",
+   "service_scope": [
+    "选校咨询",
+    "代办报名",
+    "签证指导",
+    "行前服务"
+   ],
+   "total_fee": "2230",
+   "currency": "USD",
+   "signed_date": "2026-11-15",
+   "refund_rules": [
+    {
+     "stage": "开课前4周以上取消",
+     "ratio": "95"
+    },
+    {
+     "stage": "开课前2-4周取消",
+     "ratio": "70"
+    },
+    {
+     "stage": "开课前1-2周取消",
+     "ratio": "50"
+    },
+    {
+     "stage": "开课前1周内取消",
+     "ratio": "20"
+    },
+    {
+     "stage": "在读期间（重病等特例）",
+     "ratio": "40"
+    },
+    {
+     "stage": "开除/自行退学",
+     "ratio": "0"
+    }
+   ],
+   "status": "履行中",
+   "settlement": {
+    "receivable_cny": "16056.00",
+    "paid_cny": "3000.00",
+    "balance_cny": "13056.00",
+    "cleared": false,
+    "local_fee_cny": "0.00"
+   },
+   "payments": [
+    {
+     "id": 5,
+     "type": "定金",
+     "amount": "3000",
+     "currency": "CNY",
+     "voucher_no": "INV-101-D",
+     "payee": "示例远航国际游学（虚构）",
+     "proof_file": null,
+     "paid_at": "2026-11-18T14:36:34.291134"
+    }
+   ]
+  }
+ ],
+ "service_events": [
+  {
+   "id": 15,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.284330",
+   "operator": "种子脚本",
+   "remark": "学员阶段：意向→沟通中"
+  },
+  {
+   "id": 16,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.285653",
+   "operator": "种子脚本",
+   "remark": "学员阶段：沟通中→已报名"
+  },
+  {
+   "id": 17,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.287195",
+   "operator": "种子脚本",
+   "remark": "报名「QQ English·Family 亲子 ESL（8周·2人间）」阶段：已报名→材料准备（已收护照，待LOA（虚构））"
+  }
+ ],
+ "consents": [
+  {
+   "id": 1,
+   "consent_type": "敏感信息处理",
+   "individual_consent": true,
+   "signer_name": "陈女士（虚构）",
+   "relation": "母亲",
+   "status": "有效",
+   "signed_at": "2026-11-18T14:36:34.275583",
+   "revoked_at": null
+  }
+ ],
+ "documents": [
+  {
+   "id": 8,
+   "doc_type": "护照",
+   "doc_no": "E88001101（虚构）",
+   "issued_date": null,
+   "expiry_date": "2032-06-30",
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": null
+  },
+  {
+   "id": 9,
+   "doc_type": "监护同行证明",
+   "doc_no": "同行-2026-1101（虚构）",
+   "issued_date": "2026-11-10",
+   "expiry_date": null,
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": "母亲同校 Family 课程，免 WEG（虚构）"
+  },
+  {
+   "id": 10,
+   "doc_type": "录取通知书",
+   "doc_no": "LOA-QQ-2027-0110（虚构）",
+   "issued_date": "2026-11-16",
+   "expiry_date": null,
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": "2027-01-10 入学，母子同校（虚构）"
+  }
+ ],
+ "communications": [
+  {
+   "id": 4,
+   "channel": "电话",
+   "direction": "呼出",
+   "occurred_at": "2026-11-05T15:00:00",
+   "operator": "顾问丙（虚构）",
+   "summary": "孩子在线测试A2，推荐Family课程8周（虚构）"
+  },
+  {
+   "id": 3,
+   "channel": "微信",
+   "direction": "呼入",
+   "occurred_at": "2026-11-02T09:40:00",
+   "operator": "顾问丙（虚构）",
+   "summary": "妈妈咨询寒假亲子游学，孩子六年级（虚构）"
+  }
+ ],
+ "audit_count": 9
+}

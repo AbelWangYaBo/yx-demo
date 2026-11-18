@@ -1,0 +1,226 @@
+{
+ "student": {
+  "id": 4,
+  "student_no": "STU-2027-104",
+  "name": "学员小澄（虚构）",
+  "birth_date": "1998-07-15",
+  "stage": "已流失",
+  "guardian_name": null,
+  "guardian_phone": null,
+  "guardian_id_masked": null,
+  "notes": "职场学员，年假充电（虚构）"
+ },
+ "is_minor": false,
+ "enrollments": [
+  {
+   "id": 4,
+   "program_id": 4,
+   "program_name": "SMEAG·ESL 一般英文（4周·4人间）",
+   "program_type": "语言研修",
+   "school_name": "SMEAG",
+   "school_country": "菲律宾",
+   "course_name": "ESL 一般英文",
+   "accommodation": "4人间",
+   "pickup_arranged": true,
+   "expected_start": "2026-11-15",
+   "weeks": 4,
+   "room_type": "4人间",
+   "stage": "已终止",
+   "quotation_id": 3,
+   "health_proof": false,
+   "parent_notice_signed": false,
+   "created_at": "2026-11-18T14:36:34.402019",
+   "weekly_reports": []
+  }
+ ],
+ "quotations": [
+  {
+   "id": 3,
+   "quote_no": "QT-2026-003",
+   "school_id": 2,
+   "course_id": 3,
+   "school_name": "SMEAG",
+   "course_name": "ESL 一般英文",
+   "weeks": 4,
+   "room_type": "4人间",
+   "start_date": "2026-11-15",
+   "items": [
+    {
+     "name": "学费+食宿（USD 180/周 × 4周 · 4人间）",
+     "amount": "720",
+     "currency": "USD"
+    },
+    {
+     "name": "学校注册费（一次性，不退）",
+     "amount": "100",
+     "currency": "USD"
+    },
+    {
+     "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）",
+     "amount": "≈19,400 PHP",
+     "currency": "PHP"
+    },
+    {
+     "name": "学校返佣预估（20%，内部）",
+     "amount": "144",
+     "currency": "USD",
+     "internal": true
+    }
+   ],
+   "total_usd": "820",
+   "status": "已确认",
+   "created_at": "2026-11-18T14:36:34.397807"
+  }
+ ],
+ "contracts": [
+  {
+   "id": 4,
+   "contract_no": "CT-2026-104",
+   "service_scope": [
+    "选校咨询",
+    "代办报名",
+    "签证指导"
+   ],
+   "total_fee": "820",
+   "currency": "USD",
+   "signed_date": "2026-10-10",
+   "refund_rules": [
+    {
+     "stage": "开课前4周以上取消",
+     "ratio": "95"
+    },
+    {
+     "stage": "开课前2-4周取消",
+     "ratio": "70"
+    },
+    {
+     "stage": "开课前1-2周取消",
+     "ratio": "50"
+    },
+    {
+     "stage": "开课前1周内取消",
+     "ratio": "20"
+    },
+    {
+     "stage": "在读期间（重病等特例）",
+     "ratio": "40"
+    },
+    {
+     "stage": "开除/自行退学",
+     "ratio": "0"
+    }
+   ],
+   "status": "已解除",
+   "settlement": {
+    "receivable_cny": "5904.00",
+    "paid_cny": "2000.00",
+    "balance_cny": "3904.00",
+    "cleared": false,
+    "local_fee_cny": "0.00"
+   },
+   "payments": [
+    {
+     "id": 7,
+     "type": "定金",
+     "amount": "2000",
+     "currency": "CNY",
+     "voucher_no": "INV-104-D",
+     "payee": "示例远航国际游学（虚构）",
+     "proof_file": null,
+     "paid_at": "2026-11-18T14:36:34.409119"
+    }
+   ]
+  }
+ ],
+ "service_events": [
+  {
+   "id": 24,
+   "contract_id": 4,
+   "event_type": "取消申请",
+   "occurred_at": "2026-11-01T16:35:00",
+   "operator": "顾问乙（虚构）",
+   "remark": "开课前14天取消，按梯度退70%（注册费不退）；退款协议待签（虚构）"
+  },
+  {
+   "id": 20,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.404105",
+   "operator": "种子脚本",
+   "remark": "学员阶段：意向→沟通中"
+  },
+  {
+   "id": 21,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.405273",
+   "operator": "种子脚本",
+   "remark": "学员阶段：沟通中→已报名"
+  },
+  {
+   "id": 22,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.406341",
+   "operator": "种子脚本",
+   "remark": "报名「SMEAG·ESL 一般英文（4周·4人间）」阶段：已报名→材料准备"
+  },
+  {
+   "id": 23,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.410733",
+   "operator": "种子脚本",
+   "remark": "报名「SMEAG·ESL 一般英文（4周·4人间）」阶段：材料准备→已缴费（定金已缴，尾款待缴（虚构））"
+  },
+  {
+   "id": 25,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.415201",
+   "operator": "种子脚本",
+   "remark": "报名「SMEAG·ESL 一般英文（4周·4人间）」阶段：已缴费→已终止（开课前2周取消，进入退费流程（虚构））"
+  },
+  {
+   "id": 26,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.416967",
+   "operator": "种子脚本",
+   "remark": "学员阶段：已报名→已流失（取消游学（虚构））"
+  }
+ ],
+ "consents": [],
+ "documents": [
+  {
+   "id": 14,
+   "doc_type": "护照",
+   "doc_no": "E88001104（虚构）",
+   "issued_date": null,
+   "expiry_date": "2031-08-01",
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": null
+  }
+ ],
+ "communications": [
+  {
+   "id": 8,
+   "channel": "电话",
+   "direction": "呼入",
+   "occurred_at": "2026-11-01T16:30:00",
+   "operator": "顾问乙（虚构）",
+   "summary": "公司项目突发，申请取消（开课前2周）（虚构）"
+  },
+  {
+   "id": 7,
+   "channel": "微信",
+   "direction": "呼入",
+   "occurred_at": "2026-09-28T12:00:00",
+   "operator": "顾问乙（虚构）",
+   "summary": "年假4周想强化口语，预算1.5万（虚构）"
+  }
+ ],
+ "audit_count": 9
+}

@@ -1,0 +1,62 @@
+{
+ "items": [
+  {
+   "id": 1,
+   "student_no": "STU-2027-101",
+   "name": "学员小雨（虚构）",
+   "birth_date": "2012-08-20",
+   "stage": "已报名",
+   "guardian_name": "陈女士（虚构）",
+   "guardian_phone": "13800000101",
+   "last_communication_at": "2026-11-05T15:00:00",
+   "active_program": "QQ English·Family 亲子 ESL（8周·2人间）（材料准备）"
+  },
+  {
+   "id": 2,
+   "student_no": "STU-2027-102",
+   "name": "学员小航（虚构）",
+   "birth_date": "2005-03-02",
+   "stage": "在读",
+   "guardian_name": null,
+   "guardian_phone": null,
+   "last_communication_at": "2026-07-22T10:00:00",
+   "active_program": "EV Academy·IELTS 保分班（12周·4人间）（在读）"
+  },
+  {
+   "id": 3,
+   "student_no": "STU-2027-103",
+   "name": "学员小澈（虚构）",
+   "birth_date": "2012-05-30",
+   "stage": "已报名",
+   "guardian_name": "刘先生（虚构）",
+   "guardian_phone": "13800000103",
+   "last_communication_at": "2026-11-09T11:00:00",
+   "active_program": "2027寒假宿务CIA少儿英语冬令营（虚构）（已报名）"
+  },
+  {
+   "id": 4,
+   "student_no": "STU-2027-104",
+   "name": "学员小澄（虚构）",
+   "birth_date": "1998-07-15",
+   "stage": "已流失",
+   "guardian_name": null,
+   "guardian_phone": null,
+   "last_communication_at": "2026-11-01T16:30:00",
+   "active_program": "SMEAG·ESL 一般英文（4周·4人间）（已终止）"
+  },
+  {
+   "id": 5,
+   "student_no": "STU-2027-105",
+   "name": "学员小汐（虚构）",
+   "birth_date": "2003-01-22",
+   "stage": "沟通中",
+   "guardian_name": null,
+   "guardian_phone": null,
+   "last_communication_at": "2026-11-15T10:00:00",
+   "active_program": null
+  }
+ ],
+ "total": 5,
+ "page": 1,
+ "size": 50
+}

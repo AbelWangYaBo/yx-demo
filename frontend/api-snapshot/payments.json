@@ -1,0 +1,72 @@
+[
+ {
+  "contract_id": 1,
+  "type": "定金",
+  "amount": "3000",
+  "currency": "CNY",
+  "voucher_no": "INV-102-D",
+  "payee": "示例远航国际游学（虚构）",
+  "proof_file": null,
+  "id": 1
+ },
+ {
+  "contract_id": 1,
+  "type": "代收代缴-学费",
+  "amount": "3720",
+  "currency": "USD",
+  "voucher_no": "INV-102-T",
+  "payee": "EV Academy（虚构）",
+  "proof_file": "学校INVOICE+电汇回单（虚构示例）.pdf",
+  "id": 2
+ },
+ {
+  "contract_id": 1,
+  "type": "代收代缴-注册费",
+  "amount": "100",
+  "currency": "USD",
+  "voucher_no": "INV-102-R",
+  "payee": "EV Academy（虚构）",
+  "proof_file": "学校INVOICE（虚构示例）.pdf",
+  "id": 3
+ },
+ {
+  "contract_id": 1,
+  "type": "代收代缴-当地费",
+  "amount": "58200",
+  "currency": "PHP",
+  "voucher_no": "INV-102-L",
+  "payee": "EV Academy（虚构）",
+  "proof_file": "学校当地费收据（虚构示例）.pdf",
+  "id": 4
+ },
+ {
+  "contract_id": 2,
+  "type": "定金",
+  "amount": "3000",
+  "currency": "CNY",
+  "voucher_no": "INV-101-D",
+  "payee": "示例远航国际游学（虚构）",
+  "proof_file": null,
+  "id": 5
+ },
+ {
+  "contract_id": 3,
+  "type": "定金",
+  "amount": "5000",
+  "currency": "CNY",
+  "voucher_no": "INV-103-D",
+  "payee": "示例远航国际游学（虚构）",
+  "proof_file": null,
+  "id": 6
+ },
+ {
+  "contract_id": 4,
+  "type": "定金",
+  "amount": "2000",
+  "currency": "CNY",
+  "voucher_no": "INV-104-D",
+  "payee": "示例远航国际游学（虚构）",
+  "proof_file": null,
+  "id": 7
+ }
+]

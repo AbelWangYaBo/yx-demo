@@ -1,0 +1,427 @@
+{
+ "student": {
+  "id": 2,
+  "student_no": "STU-2027-102",
+  "name": "学员小航（虚构）",
+  "birth_date": "2005-03-02",
+  "stage": "在读",
+  "guardian_name": null,
+  "guardian_phone": null,
+  "guardian_id_masked": null,
+  "notes": "大三学生，考研英语转雅思，目标6.0（虚构）"
+ },
+ "is_minor": false,
+ "enrollments": [
+  {
+   "id": 1,
+   "program_id": 1,
+   "program_name": "EV Academy·IELTS 保分班（12周·4人间）",
+   "program_type": "语言研修",
+   "school_name": "EV Academy",
+   "school_country": "菲律宾",
+   "course_name": "IELTS 保分班",
+   "accommodation": "4人间",
+   "pickup_arranged": true,
+   "expected_start": "2026-09-13",
+   "weeks": 12,
+   "room_type": "4人间",
+   "stage": "在读",
+   "quotation_id": 1,
+   "health_proof": false,
+   "parent_notice_signed": false,
+   "created_at": "2026-11-18T14:36:34.028232",
+   "weekly_reports": [
+    {
+     "id": 1,
+     "week_no": 0,
+     "level": "IELTS 4.0",
+     "test_score": "4.0",
+     "attendance_pct": null,
+     "teacher_comment": "分班测试：入中级班，口语偏弱（虚构）",
+     "parent_notified_at": "2026-09-14T20:00:00"
+    },
+    {
+     "id": 2,
+     "week_no": 2,
+     "level": "IELTS 4.0",
+     "test_score": "4.5",
+     "attendance_pct": 100,
+     "teacher_comment": "词汇量明显提升，周四模考4.5（虚构）",
+     "parent_notified_at": "2026-09-25T20:00:00"
+    },
+    {
+     "id": 3,
+     "week_no": 4,
+     "level": "IELTS 4.5",
+     "test_score": "5.0",
+     "attendance_pct": 100,
+     "teacher_comment": "写作结构进步，模考5.0（虚构）",
+     "parent_notified_at": "2026-10-09T20:00:00"
+    },
+    {
+     "id": 4,
+     "week_no": 6,
+     "level": "IELTS 5.0",
+     "test_score": "5.0",
+     "attendance_pct": 98,
+     "teacher_comment": "平台期，教师建议加练口语（虚构）",
+     "parent_notified_at": "2026-10-23T20:00:00"
+    },
+    {
+     "id": 5,
+     "week_no": 8,
+     "level": "IELTS 5.0",
+     "test_score": "5.5",
+     "attendance_pct": 100,
+     "teacher_comment": "模考5.5，保分条款生效在望（虚构）",
+     "parent_notified_at": "2026-11-06T20:00:00"
+    }
+   ]
+  }
+ ],
+ "quotations": [
+  {
+   "id": 1,
+   "quote_no": "QT-2026-001",
+   "school_id": 1,
+   "course_id": 1,
+   "school_name": "EV Academy",
+   "course_name": "IELTS 保分班",
+   "weeks": 12,
+   "room_type": "4人间",
+   "start_date": "2026-09-13",
+   "items": [
+    {
+     "name": "学费+食宿（USD 310/周 × 12周 · 4人间）",
+     "amount": "3720",
+     "currency": "USD"
+    },
+    {
+     "name": "学校注册费（一次性，不退）",
+     "amount": "100",
+     "currency": "USD"
+    },
+    {
+     "name": "当地费预估（SSP/延签/水电/教材等，到校披索现付）",
+     "amount": "≈58,200 PHP",
+     "currency": "PHP"
+    },
+    {
+     "name": "学校返佣预估（25%，内部）",
+     "amount": "930",
+     "currency": "USD",
+     "internal": true
+    }
+   ],
+   "total_usd": "3820",
+   "status": "已确认",
+   "created_at": "2026-11-18T14:36:33.981589"
+  }
+ ],
+ "contracts": [
+  {
+   "id": 1,
+   "contract_no": "CT-2026-102",
+   "service_scope": [
+    "选校咨询",
+    "代办报名",
+    "签证指导",
+    "机票协助",
+    "行前服务",
+    "在读跟踪"
+   ],
+   "total_fee": "3820",
+   "currency": "USD",
+   "signed_date": "2026-08-05",
+   "refund_rules": [
+    {
+     "stage": "开课前4周以上取消",
+     "ratio": "95"
+    },
+    {
+     "stage": "开课前2-4周取消",
+     "ratio": "70"
+    },
+    {
+     "stage": "开课前1-2周取消",
+     "ratio": "50"
+    },
+    {
+     "stage": "开课前1周内取消",
+     "ratio": "20"
+    },
+    {
+     "stage": "在读期间（重病等特例）",
+     "ratio": "40"
+    },
+    {
+     "stage": "开除/自行退学",
+     "ratio": "0"
+    }
+   ],
+   "status": "履行中",
+   "settlement": {
+    "receivable_cny": "27504.00",
+    "paid_cny": "30504.00",
+    "balance_cny": "-3000.00",
+    "cleared": true,
+    "local_fee_cny": "7275.00"
+   },
+   "payments": [
+    {
+     "id": 1,
+     "type": "定金",
+     "amount": "3000",
+     "currency": "CNY",
+     "voucher_no": "INV-102-D",
+     "payee": "示例远航国际游学（虚构）",
+     "proof_file": null,
+     "paid_at": "2026-11-18T14:36:34.052139"
+    },
+    {
+     "id": 2,
+     "type": "代收代缴-学费",
+     "amount": "3720",
+     "currency": "USD",
+     "voucher_no": "INV-102-T",
+     "payee": "EV Academy（虚构）",
+     "proof_file": "学校INVOICE+电汇回单（虚构示例）.pdf",
+     "paid_at": "2026-11-18T14:36:34.054365"
+    },
+    {
+     "id": 3,
+     "type": "代收代缴-注册费",
+     "amount": "100",
+     "currency": "USD",
+     "voucher_no": "INV-102-R",
+     "payee": "EV Academy（虚构）",
+     "proof_file": "学校INVOICE（虚构示例）.pdf",
+     "paid_at": "2026-11-18T14:36:34.066103"
+    },
+    {
+     "id": 4,
+     "type": "代收代缴-当地费",
+     "amount": "58200",
+     "currency": "PHP",
+     "voucher_no": "INV-102-L",
+     "payee": "EV Academy（虚构）",
+     "proof_file": "学校当地费收据（虚构示例）.pdf",
+     "paid_at": "2026-11-18T14:36:34.162632"
+    }
+   ]
+  }
+ ],
+ "service_events": [
+  {
+   "id": 1,
+   "contract_id": null,
+   "event_type": "报名材料递交",
+   "occurred_at": "2026-07-29T10:30:00",
+   "operator": "顾问乙（虚构）",
+   "remark": "报名表+护照复印件递交 EV（虚构）"
+  },
+  {
+   "id": 2,
+   "contract_id": null,
+   "event_type": "LOA接收",
+   "occurred_at": "2026-08-01T15:00:00",
+   "operator": "顾问乙（虚构）",
+   "remark": "床位锁定，2026-09-13 入学（虚构）"
+  },
+  {
+   "id": 3,
+   "contract_id": 1,
+   "event_type": "签证办理",
+   "occurred_at": "2026-08-08T09:00:00",
+   "operator": "顾问乙（虚构)",
+   "remark": "凭LOA办9(a)旅游签（虚构）"
+  },
+  {
+   "id": 4,
+   "contract_id": 1,
+   "event_type": "行前说明会",
+   "occurred_at": "2026-09-10T19:00:00",
+   "operator": "顾问乙（虚构）",
+   "remark": "eTravel登记/电话卡/换汇/入境文件（虚构）"
+  },
+  {
+   "id": 11,
+   "contract_id": 1,
+   "event_type": "接机",
+   "occurred_at": "2026-09-13T21:30:00",
+   "operator": "学校学生经理（虚构）",
+   "remark": "宿务机场接机，费用含在当地费（虚构）"
+  },
+  {
+   "id": 12,
+   "contract_id": null,
+   "event_type": "SSP办理",
+   "occurred_at": "2026-09-14T11:00:00",
+   "operator": "学校学生经理（虚构）",
+   "remark": "学校代办，披索现付（虚构）"
+  },
+  {
+   "id": 13,
+   "contract_id": null,
+   "event_type": "延签办理",
+   "occurred_at": "2026-10-20T10:00:00",
+   "operator": "学校学生经理（虚构）",
+   "remark": "第一次延签+30天（虚构）"
+  },
+  {
+   "id": 5,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.109076",
+   "operator": "种子脚本",
+   "remark": "学员阶段：意向→沟通中"
+  },
+  {
+   "id": 6,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.111564",
+   "operator": "种子脚本",
+   "remark": "学员阶段：沟通中→已报名"
+  },
+  {
+   "id": 7,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.123886",
+   "operator": "种子脚本",
+   "remark": "学员阶段：已报名→在读"
+  },
+  {
+   "id": 8,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.147198",
+   "operator": "种子脚本",
+   "remark": "报名「EV Academy·IELTS 保分班（12周·4人间）」阶段：已报名→材料准备（护照/LOA/签证齐备）"
+  },
+  {
+   "id": 9,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.149377",
+   "operator": "种子脚本",
+   "remark": "报名「EV Academy·IELTS 保分班（12周·4人间）」阶段：材料准备→已缴费（定金+学费+注册费到账）"
+  },
+  {
+   "id": 10,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.151668",
+   "operator": "种子脚本",
+   "remark": "报名「EV Academy·IELTS 保分班（12周·4人间）」阶段：已缴费→已入学（9-13接机到校（虚构））"
+  },
+  {
+   "id": 14,
+   "contract_id": null,
+   "event_type": "阶段变更",
+   "occurred_at": "2026-11-18T14:36:34.230241",
+   "operator": "种子脚本",
+   "remark": "报名「EV Academy·IELTS 保分班（12周·4人间）」阶段：已入学→在读（分班测试完成，正式开课）"
+  }
+ ],
+ "consents": [],
+ "documents": [
+  {
+   "id": 1,
+   "doc_type": "护照",
+   "doc_no": "E88001021（虚构）",
+   "issued_date": null,
+   "expiry_date": "2033-03-02",
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": null
+  },
+  {
+   "id": 2,
+   "doc_type": "录取通知书",
+   "doc_no": "LOA-EV-2026-0913（虚构）",
+   "issued_date": "2026-08-01",
+   "expiry_date": null,
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": "学校1个工作日出 LOA+INVOICE（虚构）"
+  },
+  {
+   "id": 3,
+   "doc_type": "签证",
+   "doc_no": "PH9A-2026-88120（虚构）",
+   "issued_date": "2026-08-15",
+   "expiry_date": "2026-11-11",
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": "59天停留，入学后学校代办延签"
+  },
+  {
+   "id": 4,
+   "doc_type": "机票",
+   "doc_no": "MU5017 2026-09-12（虚构）",
+   "issued_date": "2026-08-20",
+   "expiry_date": null,
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": "周日入学·周六离校口径（虚构）"
+  },
+  {
+   "id": 5,
+   "doc_type": "保险单",
+   "doc_no": "INS-PH-2026-102（虚构）",
+   "issued_date": "2026-09-05",
+   "expiry_date": "2026-12-10",
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": "含海外医疗与紧急救援（虚构）"
+  },
+  {
+   "id": 6,
+   "doc_type": "SSP",
+   "doc_no": "SSP-EV-2026-1042（虚构）",
+   "issued_date": "2026-09-14",
+   "expiry_date": "2026-12-05",
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": "特殊学习许可，有效期=课程周数；含SSP E-Card（虚构）"
+  },
+  {
+   "id": 7,
+   "doc_type": "ACR I-Card",
+   "doc_no": "ACR-2026-00871（虚构）",
+   "issued_date": "2026-10-20",
+   "expiry_date": "2027-10-20",
+   "file_ref": null,
+   "attachment_id": null,
+   "attachment_filename": null,
+   "remark": "停留超59天办理，随第一次延签（虚构）"
+  }
+ ],
+ "communications": [
+  {
+   "id": 2,
+   "channel": "电话",
+   "direction": "呼出",
+   "occurred_at": "2026-07-22T10:00:00",
+   "operator": "顾问乙（虚构）",
+   "summary": "免费在线测试：CEFR B1+，摸底约雅思4.0（虚构）"
+  },
+  {
+   "id": 1,
+   "channel": "微信",
+   "direction": "呼入",
+   "occurred_at": "2026-07-20T14:20:00",
+   "operator": "顾问乙（虚构）",
+   "summary": "咨询菲律宾雅思保分班，对比宿务/碧瑶（虚构）"
+  }
+ ],
+ "audit_count": 21
+}

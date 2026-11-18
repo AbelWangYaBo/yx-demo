@@ -1,0 +1,138 @@
+{
+ "agency": {
+  "id": 1,
+  "name": "示例远航国际游学（虚构）",
+  "uscc": "91370000DEMO2026XYZ1",
+  "travel_license_no": "L-SD-DEMO2026001",
+  "outbound_licensed": true,
+  "license_expiry": "2028-06-30",
+  "filing_status": "已备案",
+  "filing_no": "BA-2026-DEMO-0841-001",
+  "filing_date": "2026-10-20",
+  "premise_proof": "办公场所租赁合同（虚构示例）.pdf",
+  "policy_documents": [
+   "人员管理制度",
+   "教育培训制度",
+   "资料保存制度",
+   "数据安全管理制度",
+   "合规管理制度"
+  ]
+ },
+ "staff": [
+  {
+   "id": 1,
+   "name": "负责人甲（虚构）",
+   "role": "法定代表人",
+   "no_crime_declaration": true,
+   "filing_status": "已备案",
+   "filing_date": "2026-10-20",
+   "expiry_date": "2027-10-20"
+  },
+  {
+   "id": 2,
+   "name": "顾问乙（虚构）",
+   "role": "顾问",
+   "no_crime_declaration": true,
+   "filing_status": "已备案",
+   "filing_date": "2026-10-20",
+   "expiry_date": "2027-10-20"
+  },
+  {
+   "id": 3,
+   "name": "顾问丙（虚构）",
+   "role": "顾问",
+   "no_crime_declaration": false,
+   "filing_status": "未备案",
+   "filing_date": null,
+   "expiry_date": null
+  }
+ ],
+ "warnings": [
+  {
+   "level": "warning",
+   "code": "STAFF_FILING_PENDING",
+   "message": "备案人员「顾问丙（虚构）」尚未完成人员备案"
+  }
+ ],
+ "programs_at_risk": [],
+ "business": {
+  "in_study": 1,
+  "pending_quotes": 2,
+  "arrivals_this_month": 0,
+  "est_commission_usd": "1386",
+  "settleable_commission_usd": "930"
+ },
+ "funnel": {
+  "student_stages": {
+   "在读": 1,
+   "已报名": 2,
+   "已流失": 1,
+   "沟通中": 1
+  },
+  "quote_status": {
+   "已发送": 1,
+   "已确认": 3,
+   "草稿": 1
+  }
+ },
+ "expiring_documents": [
+  {
+   "student_no": "STU-2027-102",
+   "student_name": "学员小航（虚构）",
+   "doc_type": "签证",
+   "doc_no": "PH9A-2026-88120（虚构）",
+   "expiry_date": "2026-11-11",
+   "days_left": -7,
+   "level": "error",
+   "hint": "已过期 7 天"
+  },
+  {
+   "student_no": "STU-2027-102",
+   "student_name": "学员小航（虚构）",
+   "doc_type": "SSP",
+   "doc_no": "SSP-EV-2026-1042（虚构）",
+   "expiry_date": "2026-12-05",
+   "days_left": 17,
+   "level": "warning",
+   "hint": "17 天后到期"
+  },
+  {
+   "student_no": "STU-2027-102",
+   "student_name": "学员小航（虚构）",
+   "doc_type": "保险单",
+   "doc_no": "INS-PH-2026-102（虚构）",
+   "expiry_date": "2026-12-10",
+   "days_left": 22,
+   "level": "warning",
+   "hint": "22 天后到期"
+  }
+ ],
+ "follow_ups": [
+  {
+   "kind": "待报价跟进",
+   "student_no": "STU-2027-105",
+   "student_name": "学员小汐（虚构）",
+   "detail": "QT-2026-004（4周·2人间，$1060）状态 已发送",
+   "urgent": false
+  },
+  {
+   "kind": "待报价跟进",
+   "student_no": "STU-2027-105",
+   "student_name": "学员小汐（虚构）",
+   "detail": "QT-2026-005（4周·2人间，$1020）状态 草稿",
+   "urgent": false
+  },
+  {
+   "kind": "材料收集中",
+   "student_no": "STU-2027-101",
+   "student_name": "学员小雨（虚构）",
+   "detail": "QQ English·Family 亲子 ESL（8周·2人间）｜待收材料/证件（护照/签证/LOA 等）",
+   "urgent": false
+  }
+ ],
+ "audit_chain": {
+  "valid": true,
+  "checked": 110,
+  "broken_at": null
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "name": "示例远航国际游学（虚构）",
+ "uscc": "91370000DEMO2026XYZ1",
+ "travel_license_no": "L-SD-DEMO2026001",
+ "outbound_licensed": true,
+ "license_expiry": "2028-06-30",
+ "filing_status": "已备案",
+ "filing_no": "BA-2026-DEMO-0841-001",
+ "filing_date": "2026-10-20",
+ "premise_proof": "办公场所租赁合同（虚构示例）.pdf",
+ "policy_documents": [
+  "人员管理制度",
+  "教育培训制度",
+  "资料保存制度",
+  "数据安全管理制度",
+  "合规管理制度"
+ ],
+ "id": 1,
+ "created_at": "2026-11-18T14:36:33.855210",
+ "updated_at": "2026-11-18T14:36:33.855215"
+}

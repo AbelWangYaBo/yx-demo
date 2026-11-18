@@ -1,0 +1,135 @@
+[
+ {
+  "school_id": 1,
+  "name": "IELTS 保分班",
+  "course_type": "IELTS保分",
+  "lessons": "1对1×4 + 团体×3",
+  "min_weeks": 12,
+  "room_prices": {
+   "4人间": 310,
+   "3人间": 330,
+   "2人间": 365,
+   "1人间": 430
+  },
+  "guarantee": "未达目标分免费延长就读（免学费，食宿自理）；要求出勤≥97%且模考全勤（虚构演示）",
+  "notes": null,
+  "id": 1,
+  "created_at": "2026-11-18T14:36:33.897129"
+ },
+ {
+  "school_id": 1,
+  "name": "密集 ESL",
+  "course_type": "密集ESL",
+  "lessons": "1对1×5 + 团体×2 + 夜课×2",
+  "min_weeks": 4,
+  "room_prices": {
+   "4人间": 255,
+   "3人间": 275,
+   "2人间": 310,
+   "1人间": 380
+  },
+  "guarantee": null,
+  "notes": null,
+  "id": 2,
+  "created_at": "2026-11-18T14:36:33.898242"
+ },
+ {
+  "school_id": 2,
+  "name": "ESL 一般英文",
+  "course_type": "ESL",
+  "lessons": "1对1×4 + 团体×2 + 选修×4",
+  "min_weeks": 4,
+  "room_prices": {
+   "4人间": 180,
+   "3人间": 205,
+   "2人间": 240,
+   "1人间": 310
+  },
+  "guarantee": null,
+  "notes": null,
+  "id": 3,
+  "created_at": "2026-11-18T14:36:33.909633"
+ },
+ {
+  "school_id": 2,
+  "name": "TOEIC 保分班",
+  "course_type": "TOEIC保分",
+  "lessons": "1对1×4 + 团体×3",
+  "min_weeks": 8,
+  "room_prices": {
+   "4人间": 230,
+   "3人间": 255,
+   "2人间": 290,
+   "1人间": 360
+  },
+  "guarantee": null,
+  "notes": null,
+  "id": 4,
+  "created_at": "2026-11-18T14:36:33.910584"
+ },
+ {
+  "school_id": 3,
+  "name": "商务英语",
+  "course_type": "商务英语",
+  "lessons": "1对1×4 + 团体×3",
+  "min_weeks": 4,
+  "room_prices": {
+   "3人间": 240,
+   "2人间": 275,
+   "1人间": 350
+  },
+  "guarantee": null,
+  "notes": null,
+  "id": 5,
+  "created_at": "2026-11-18T14:36:33.919400"
+ },
+ {
+  "school_id": 4,
+  "name": "Family 亲子 ESL",
+  "course_type": "亲子",
+  "lessons": "1对1×4 + 团体×2",
+  "min_weeks": 4,
+  "room_prices": {
+   "4人间": 200,
+   "3人间": 225,
+   "2人间": 260,
+   "1人间": 330
+  },
+  "guarantee": null,
+  "notes": "15岁以下学员须家长同校上课（虚构演示）",
+  "id": 6,
+  "created_at": "2026-11-18T14:36:33.939334"
+ },
+ {
+  "school_id": 5,
+  "name": "密集 ESL",
+  "course_type": "密集ESL",
+  "lessons": "1对1×4 + 团体×4",
+  "min_weeks": 4,
+  "room_prices": {
+   "4人间": 170,
+   "3人间": 195,
+   "2人间": 230,
+   "1人间": 300
+  },
+  "guarantee": null,
+  "notes": null,
+  "id": 7,
+  "created_at": "2026-11-18T14:36:33.957774"
+ },
+ {
+  "school_id": 6,
+  "name": "Junior Camp 寒假营",
+  "course_type": "冬夏令营",
+  "lessons": "1对1×2 + 团体×4 + 营地活动",
+  "min_weeks": 3,
+  "room_prices": {
+   "4人间": 520,
+   "3人间": 560
+  },
+  "guarantee": null,
+  "notes": "9-15岁，含SSP/WEG/接机/活动/保险，领队师生比1:10（虚构演示）",
+  "id": 8,
+  "created_at": "2026-11-18T14:36:33.960807"
+ }
+]

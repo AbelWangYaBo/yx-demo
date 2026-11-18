@@ -1,0 +1,50 @@
+[
+ {
+  "id": 6,
+  "actor": "演示管理员",
+  "access_type": "VIEW_STUDENT",
+  "target": "STU-2027-105",
+  "detail": "{\"student_no\": \"STU-2027-105\", \"name\": \"学员小汐（虚构）\"}",
+  "created_at": "2026-11-18T18:59:02.205167"
+ },
+ {
+  "id": 5,
+  "actor": "演示管理员",
+  "access_type": "VIEW_STUDENT",
+  "target": "STU-2027-104",
+  "detail": "{\"student_no\": \"STU-2027-104\", \"name\": \"学员小澄（虚构）\"}",
+  "created_at": "2026-11-18T18:59:02.172986"
+ },
+ {
+  "id": 4,
+  "actor": "演示管理员",
+  "access_type": "VIEW_STUDENT",
+  "target": "STU-2027-103",
+  "detail": "{\"student_no\": \"STU-2027-103\", \"name\": \"学员小澈（虚构）\"}",
+  "created_at": "2026-11-18T18:59:02.131666"
+ },
+ {
+  "id": 3,
+  "actor": "演示管理员",
+  "access_type": "VIEW_STUDENT",
+  "target": "STU-2027-102",
+  "detail": "{\"student_no\": \"STU-2027-102\", \"name\": \"学员小航（虚构）\"}",
+  "created_at": "2026-11-18T18:59:02.123158"
+ },
+ {
+  "id": 2,
+  "actor": "演示管理员",
+  "access_type": "VIEW_STUDENT",
+  "target": "STU-2027-101",
+  "detail": "{\"student_no\": \"STU-2027-101\", \"name\": \"学员小雨（虚构）\"}",
+  "created_at": "2026-11-18T18:59:02.021889"
+ },
+ {
+  "id": 1,
+  "actor": "演示管理员",
+  "access_type": "VIEW_STUDENT",
+  "target": "STU-2027-101",
+  "detail": "{\"student_no\": \"STU-2027-101\", \"name\": \"学员小雨（虚构）\"}",
+  "created_at": "2026-11-18T15:07:54.378107"
+ }
+]
